@@ -1,0 +1,23 @@
+{
+  "status_code": 200,
+  "headers": {
+    "date": "Sun, 31 Aug 2025 11:56:08 GMT",
+    "content-type": "application/json; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "content-encoding": "br",
+    "request-context": "appId=cid-v1:91d02cc2-becc-44a8-aeb0-03e315318773",
+    "cf-cache-status": "DYNAMIC",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "expect-ct": "max-age=86400, enforce",
+    "referrer-policy": "same-origin",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "server": "cloudflare",
+    "cf-ray": "977c57c98e4afcd2-FUK"
+  },
+  "url": "https://unctadstat-api.unctad.org/api/reportMetadata/US.MerchExportsAndImports/bulkfiles/en",
+  "method": "GET",
+  "cached_at": "2025-08-31T20:56:08.784021"
+}

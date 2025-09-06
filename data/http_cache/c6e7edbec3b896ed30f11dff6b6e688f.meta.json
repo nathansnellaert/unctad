@@ -1,0 +1,24 @@
+{
+  "status_code": 200,
+  "headers": {
+    "date": "Sun, 31 Aug 2025 11:56:05 GMT",
+    "content-type": "application/octet-stream",
+    "content-length": "62740",
+    "connection": "keep-alive",
+    "cf-ray": "977c57b63a12fcd2-FUK",
+    "access-control-expose-headers": "Content-Disposition",
+    "request-context": "appId=cid-v1:91d02cc2-becc-44a8-aeb0-03e315318773",
+    "content-disposition": "attachment; filename=\"US_Remittances.csv.7z\"",
+    "cf-cache-status": "DYNAMIC",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "expect-ct": "max-age=86400, enforce",
+    "referrer-policy": "same-origin",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "server": "cloudflare"
+  },
+  "url": "https://unctadstat-api.unctad.org/api/reportMetadata/US.Remittances/bulkfile/1294/en",
+  "method": "GET",
+  "cached_at": "2025-08-31T20:56:05.819016"
+}

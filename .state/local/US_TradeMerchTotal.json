@@ -1,0 +1,10 @@
+{
+  "last_updated": "2025-08-31T21:58:36.119584",
+  "row_count": 44882,
+  "url": "US.TradeMerchTotal",
+  "_metadata": {
+    "updated_at": "2025-08-31T21:58:36.119638",
+    "run_id": "dataset-US_TradeMerchTotal-20250831215833",
+    "connector": "unctad"
+  }
+}

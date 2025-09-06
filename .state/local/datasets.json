@@ -1,0 +1,23 @@
+{
+  "balance_of_payments_current_account": {
+    "last_updated": "2025-08-31T20:56:05.080442",
+    "rows": 11903
+  },
+  "personal_remittances": {
+    "last_updated": "2025-08-31T20:56:05.832681",
+    "rows": 7032
+  },
+  "goods_and_services_bpm6": {
+    "last_updated": "2025-08-31T20:56:07.010727",
+    "rows": 35040
+  },
+  "foreign_direct_investment": {
+    "last_updated": "2025-08-31T20:56:08.173542",
+    "rows": 34134
+  },
+  "_metadata": {
+    "updated_at": "2025-08-31T20:56:08.173658",
+    "run_id": "local-dev",
+    "connector": "unctad"
+  }
+}

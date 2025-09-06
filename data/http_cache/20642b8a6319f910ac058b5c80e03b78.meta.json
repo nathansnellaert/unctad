@@ -1,0 +1,25 @@
+{
+  "status_code": 200,
+  "headers": {
+    "date": "Sun, 31 Aug 2025 11:56:08 GMT",
+    "content-type": "application/json; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "content-encoding": "br",
+    "request-context": "appId=cid-v1:91d02cc2-becc-44a8-aeb0-03e315318773",
+    "cf-cache-status": "DYNAMIC",
+    "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/csp-reporting.cloudflare.com\\/cdn-cgi\\/script_monitor\\/report?m=m3LW8OsUuD855M3uVP7yGzF4TRNTTDN_SFslSkOfpwM-1756641368-1.0.1.1-lMnd2b7TSRGgh1EvYbW_yAPNS7Qp0beW7dmeNLcYjsZk8GXaPt2ocqj_soy3zk9EnfbT5JHa7iC2tasigKlyBKAYgjBQ5cs_2Jz7Kc_MwwzKSnO0T8KzOyxd.CagAlf10KkDKg4BWqhIGfaJy90QECfNiig8mWLcBANRKcL8Sd4OEChAjczFCi9eqipZ.plF\"}],\"group\":\"cf-csp-endpoint\",\"max_age\":86400}",
+    "content-security-policy-report-only": "script-src 'none'; connect-src 'none'; report-uri https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report?m=m3LW8OsUuD855M3uVP7yGzF4TRNTTDN_SFslSkOfpwM-1756641368-1.0.1.1-lMnd2b7TSRGgh1EvYbW_yAPNS7Qp0beW7dmeNLcYjsZk8GXaPt2ocqj_soy3zk9EnfbT5JHa7iC2tasigKlyBKAYgjBQ5cs_2Jz7Kc_MwwzKSnO0T8KzOyxd.CagAlf10KkDKg4BWqhIGfaJy90QECfNiig8mWLcBANRKcL8Sd4OEChAjczFCi9eqipZ.plF; report-to cf-csp-endpoint",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "expect-ct": "max-age=86400, enforce",
+    "referrer-policy": "same-origin",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "server": "cloudflare",
+    "cf-ray": "977c57c79920fcd2-FUK"
+  },
+  "url": "https://unctadstat-api.unctad.org/api/reportMetadata/US.CommodityPrice_FreeFoodIndicesCurrAndConst/bulkfiles/en",
+  "method": "GET",
+  "cached_at": "2025-08-31T20:56:08.486609"
+}
