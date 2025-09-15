@@ -12,7 +12,8 @@ dependencies = [
     "ratelimit",
     "duckdb",
     "requests",
-    "pyiceberg"
+    "pyiceberg",
+    "sqlalchemy>=2.0.43",
 ]
 
 [tool.uv]
