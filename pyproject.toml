@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "UNCTAD data connector"
 requires-python = ">=3.11"
 dependencies = [
+    "psutil>=5.9.0",
     "httpx",
     "pyarrow",
     "tenacity",
@@ -12,9 +13,10 @@ dependencies = [
     "ratelimit",
     "duckdb",
     "requests",
-    "pyiceberg",
+    "deltalake>=0.17.0",
     "sqlalchemy>=2.0.43",
 ]
 
 [tool.uv]
-dev-dependencies = []
+dev-dependencies = [
+    "psutil>=5.9.0",]
