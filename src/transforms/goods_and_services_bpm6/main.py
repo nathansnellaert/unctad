@@ -1,6 +1,6 @@
 import pyarrow as pa
 from subsets_utils import upload_data, publish
-from transforms.common import load_raw, parse_value
+from utils import load_raw, parse_value, to_str
 from .test import test
 
 DATASET_ID = "unctad_goods_and_services_bpm6"
@@ -29,7 +29,7 @@ def run():
     for row in raw:
         records.append({
             "year": str(row["Year"]),
-            "economy_code": row["Economy"],
+            "economy_code": to_str(row["Economy"]),
             "economy": row["Economy Label"],
             "series": row.get("Series Label", ""),
             "flow": row.get("Flow Label", ""),

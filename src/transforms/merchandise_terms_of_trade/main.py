@@ -1,6 +1,6 @@
 import pyarrow as pa
 from subsets_utils import upload_data, publish
-from transforms.common import load_raw, parse_value
+from utils import load_raw, parse_value, to_str
 from .test import test
 
 DATASET_ID = "unctad_merchandise_terms_of_trade"
@@ -27,7 +27,7 @@ def run():
     for row in raw:
         records.append({
             "year": str(row["Year"]),
-            "economy_code": row["Economy"],
+            "economy_code": to_str(row["Economy"]),
             "economy": row["Economy Label"],
             "index_type": row.get("Index Label", ""),
             "index_value": parse_value(row.get("Index Base 2015", "")),

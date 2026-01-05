@@ -1,6 +1,6 @@
 import pyarrow as pa
 from subsets_utils import upload_data, publish
-from transforms.common import load_raw, parse_value
+from utils import load_raw, parse_value, to_str
 from .test import test
 
 DATASET_ID = "unctad_population_total_and_urban"
@@ -27,7 +27,7 @@ def run():
     for row in raw:
         records.append({
             "year": str(row["Year"]),
-            "economy_code": row["Economy"],
+            "economy_code": to_str(row["Economy"]),
             "economy": row["Economy Label"],
             "population_thousands": parse_value(row.get("Absolute value in thousands", "")),
             "urban_pct": parse_value(row.get("Urban population as percentage of total population", "")),

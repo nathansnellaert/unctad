@@ -1,6 +1,6 @@
 import pyarrow as pa
 from subsets_utils import upload_data, publish
-from transforms.common import load_raw, parse_value
+from utils import load_raw, parse_value, to_str
 from .test import test
 
 DATASET_ID = "unctad_gdp_growth_rates"
@@ -27,7 +27,7 @@ def run():
     for row in raw:
         records.append({
             "period": row["Period Label"],
-            "economy_code": row["Economy"],
+            "economy_code": to_str(row["Economy"]),
             "economy": row["Economy Label"],
             "growth_rate": parse_value(row.get("Annual average growth rate", "")),
             "growth_rate_per_capita": parse_value(row.get("Annual average growth rate per capita", "")),

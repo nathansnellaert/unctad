@@ -1,6 +1,6 @@
 import pyarrow as pa
 from subsets_utils import upload_data, publish
-from transforms.common import load_raw, parse_value
+from utils import load_raw, parse_value
 from .test import test
 
 DATASET_ID = "unctad_ict_use_by_location"

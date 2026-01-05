@@ -1,6 +1,6 @@
 import pyarrow as pa
 from subsets_utils import upload_data, publish
-from transforms.common import load_raw, parse_value
+from utils import load_raw, parse_value, to_str
 from .test import test
 
 DATASET_ID = "unctad_import_tariff_rates"
@@ -32,9 +32,9 @@ def run():
         records.append({
             "year": str(row["Year"]),
             "duty_type": row.get("DutyType Label", ""),
-            "market_code": row.get("Market", ""),
+            "market_code": to_str(row.get("Market", "")),
             "market": row.get("Market Label", ""),
-            "origin_code": row.get("Origin", ""),
+            "origin_code": to_str(row.get("Origin", "")),
             "origin": row.get("Origin Label", ""),
             "product_category": row.get("ProductCategory Label", ""),
             "simple_avg_rate": parse_value(row.get("Simple average of rates", "")),

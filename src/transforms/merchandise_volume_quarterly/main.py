@@ -1,6 +1,6 @@
 import pyarrow as pa
 from subsets_utils import upload_data, publish
-from transforms.common import load_raw, parse_value, parse_quarter
+from utils import load_raw, parse_value, parse_quarter, to_str
 from .test import test
 
 DATASET_ID = "unctad_merchandise_volume_quarterly"
@@ -31,7 +31,7 @@ def run():
     for row in raw:
         records.append({
             "quarter": parse_quarter(row["Quarter Label"]),
-            "economy_code": row["Economy"],
+            "economy_code": to_str(row["Economy"]),
             "economy": row["Economy Label"],
             "flow": row.get("Flow Label", ""),
             "growth_rate_period": parse_value(row.get("Growth rate (over previous period)", "")),

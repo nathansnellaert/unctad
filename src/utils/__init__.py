@@ -1,4 +1,7 @@
-"""Common utilities for UNCTAD transforms."""
+"""UNCTAD connector utilities.
+
+Shared helper functions for parsing and transforming UNCTAD data.
+"""
 
 from subsets_utils import load_raw_parquet, load_raw_json
 

@@ -1,6 +1,6 @@
 import pyarrow as pa
 from subsets_utils import upload_data, publish
-from transforms.common import load_raw, parse_value, to_str
+from utils import load_raw, parse_value, to_str
 from .test import test
 
 DATASET_ID = "unctad_merchandise_theil_indices"
