@@ -3,6 +3,7 @@ import io
 import os
 import tempfile
 import py7zr
+import pyarrow as pa
 import pyarrow.csv as pac
 from subsets_utils import get
 
@@ -38,5 +39,13 @@ def download_dataset(report_name: str):
         # Normalize column names
         new_names = [c.lower().replace(" ", "_") for c in table.column_names]
         table = table.rename_columns(new_names)
+
+    # Drop columns with null type (all values are null)
+    cols_to_keep = []
+    for i, field in enumerate(table.schema):
+        if field.type != pa.null():
+            cols_to_keep.append(table.column_names[i])
+    if len(cols_to_keep) < len(table.column_names):
+        table = table.select(cols_to_keep)
 
     return table
