@@ -1,1 +1,1 @@
-"""UNCTAD connector nodes."""
+"""UNCTAD nodes - Generated."""

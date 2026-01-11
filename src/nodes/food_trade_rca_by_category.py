@@ -1,13 +1,23 @@
-"""Fetch Food Trade Rca By Category from UNCTAD."""
+"""Download and transform TradeFoodProcCat_Cat_RCA."""
 from utils import download_dataset
-from subsets_utils import sync_data, save_state
+from subsets_utils import save_raw_parquet, load_raw_parquet, sync_data
 
 REPORT = "US.TradeFoodProcCat_Cat_RCA"
 DATASET_ID = "unctad_food_trade_rca_by_category"
 
 
-def run():
+def download():
+    """Download US.TradeFoodProcCat_Cat_RCA from UNCTAD API."""
     table = download_dataset(REPORT)
+    save_raw_parquet(table, "food_trade_rca_by_category")
+    print(f"  Downloaded {REPORT}: {table.num_rows:,} rows")
+
+
+def transform():
+    """Transform and upload unctad_food_trade_rca_by_category."""
+    table = load_raw_parquet("food_trade_rca_by_category")
+
+    # TODO: Add custom transform logic here
+
     sync_data(table, DATASET_ID)
-    save_state("food_trade_rca_by_category", {"rows": len(table)})
-    print(f"  {DATASET_ID}: {len(table):,} rows")
+    print(f"  Uploaded {DATASET_ID}: {table.num_rows:,} rows")

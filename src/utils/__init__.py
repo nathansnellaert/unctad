@@ -3,8 +3,8 @@ import io
 import os
 import tempfile
 import py7zr
+import duckdb
 import pyarrow as pa
-import pyarrow.csv as pac
 from subsets_utils import get
 
 
@@ -35,10 +35,13 @@ def download_dataset(report_name: str):
             archive.extractall(path=tmpdir)
 
         csv_path = os.path.join(tmpdir, csv_files[0])
-        table = pac.read_csv(csv_path)
-        # Normalize column names
-        new_names = [c.lower().replace(" ", "_") for c in table.column_names]
-        table = table.rename_columns(new_names)
+
+        # Use DuckDB for memory-efficient CSV parsing (streams from disk)
+        conn = duckdb.connect()
+        table = conn.execute(f"""
+            SELECT * FROM read_csv('{csv_path}', normalize_names=true, null_padding=true)
+        """).arrow()
+        conn.close()
 
     # Drop columns with null type (all values are null)
     cols_to_keep = []

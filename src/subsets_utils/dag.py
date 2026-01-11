@@ -170,7 +170,16 @@ class DAG:
         Args:
             isolate: Run each task in subprocess for memory isolation
             targets: Optional list of node names to run (assumes deps already ran)
+
+        Env vars:
+            DAG_TARGET: Comma-separated node names to run (overrides targets arg)
+            DAG_ON_FAILURE: "crash" (default) or "continue"
         """
+        # Env var overrides targets arg
+        env_targets = os.environ.get("DAG_TARGET")
+        if env_targets:
+            targets = [t.strip() for t in env_targets.split(",")]
+
         order = self._topological_order()
 
         # Filter to targets if specified
@@ -206,7 +215,8 @@ class DAG:
                 print(f"[DAG] {task_id} done ({result['duration_s']:.1f}s)")
             else:
                 print(f"[DAG] {task_id} failed: {result.get('error', 'unknown')}")
-                break  # Stop on failure
+                if os.environ.get("DAG_ON_FAILURE", "crash") == "crash":
+                    break
 
         return self
 

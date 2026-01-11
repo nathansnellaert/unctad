@@ -1,13 +1,23 @@
-"""Fetch Commodity Price Indices Annual from UNCTAD."""
+"""Download and transform CommodityPriceIndices_A."""
 from utils import download_dataset
-from subsets_utils import sync_data, save_state
+from subsets_utils import save_raw_parquet, load_raw_parquet, sync_data
 
 REPORT = "US.CommodityPriceIndices_A"
 DATASET_ID = "unctad_commodity_price_indices_annual"
 
 
-def run():
+def download():
+    """Download US.CommodityPriceIndices_A from UNCTAD API."""
     table = download_dataset(REPORT)
+    save_raw_parquet(table, "commodity_price_indices_annual")
+    print(f"  Downloaded {REPORT}: {table.num_rows:,} rows")
+
+
+def transform():
+    """Transform and upload unctad_commodity_price_indices_annual."""
+    table = load_raw_parquet("commodity_price_indices_annual")
+
+    # TODO: Add custom transform logic here
+
     sync_data(table, DATASET_ID)
-    save_state("commodity_price_indices_annual", {"rows": len(table)})
-    print(f"  {DATASET_ID}: {len(table):,} rows")
+    print(f"  Uploaded {DATASET_ID}: {table.num_rows:,} rows")

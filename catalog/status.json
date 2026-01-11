@@ -1,0 +1,398 @@
+{
+  "_meta": {
+    "last_synced": "2026-01-10T21:30:25.850763Z",
+    "catalog_source": "https://unctadstat-api.unctad.org/api/datacenter/en"
+  },
+  "reports": {
+    "US.AssociatedPlasticsTradebyPartner": {
+      "status": "active",
+      "path": "nodes/associated_plastics_trade.py"
+    },
+    "US.BioTradeMerchGDPShare": {
+      "status": "active",
+      "path": "nodes/biotrade_gdp_share.py"
+    },
+    "US.BioTradeMerchMarketIndices": {
+      "status": "active",
+      "path": "nodes/biotrade_market_indices.py"
+    },
+    "US.BioTradeMerchProdConcent": {
+      "status": "active",
+      "path": "nodes/biotrade_concentration.py"
+    },
+    "US.BiotradeMerch": {
+      "status": "active",
+      "path": "nodes/biotrade_merchandise.py"
+    },
+    "US.BiotradeMerchRCA": {
+      "status": "active",
+      "path": "nodes/biotrade_rca.py"
+    },
+    "US.BiotradeMerchShare": {
+      "status": "active",
+      "path": "nodes/biotrade_share.py"
+    },
+    "US.CommodityPriceIndices_A": {
+      "status": "active",
+      "path": "nodes/commodity_price_indices_annual.py"
+    },
+    "US.CommodityPriceIndices_M": {
+      "status": "active",
+      "path": "nodes/commodity_price_indices_monthly.py"
+    },
+    "US.CommodityPrice_A": {
+      "status": "active",
+      "path": "nodes/commodity_prices_annual.py"
+    },
+    "US.CommodityPrice_M": {
+      "status": "active",
+      "path": "nodes/commodity_prices_monthly.py"
+    },
+    "US.ConcentDiversIndices": {
+      "status": "active",
+      "path": "nodes/merchandise_concentration_indices.py"
+    },
+    "US.ConcentStructIndices": {
+      "status": "active",
+      "path": "nodes/merchandise_structural_indices.py"
+    },
+    "US.ContPortThroughput": {
+      "status": "active",
+      "path": "nodes/container_port_throughput.py"
+    },
+    "US.Cpi_A": {
+      "status": "active",
+      "path": "nodes/consumer_price_index_annual.py"
+    },
+    "US.CreativeGoodsGR": {
+      "status": "active",
+      "path": "nodes/creative_goods_growth_rates.py"
+    },
+    "US.CreativeGoodsIndex": {
+      "status": "active",
+      "path": "nodes/creative_goods_index.py"
+    },
+    "US.CreativeGoodsValue": {
+      "status": "active",
+      "path": "nodes/creative_goods_value.py"
+    },
+    "US.CreativeServ_Group_E": {
+      "status": "active",
+      "path": "nodes/creative_services_group_e.py"
+    },
+    "US.CreativeServ_Indiv_Tot": {
+      "status": "active",
+      "path": "nodes/creative_services_individual.py"
+    },
+    "US.CurrAccBalance": {
+      "status": "active",
+      "path": "nodes/current_account_balance.py"
+    },
+    "US.DigitallyDeliverableServices": {
+      "status": "active",
+      "path": "nodes/digitally_deliverable_services.py"
+    },
+    "US.ECommerceInternational": {
+      "status": "pending"
+    },
+    "US.ECommerceTotal": {
+      "status": "pending"
+    },
+    "US.ExchangeRateCrosstab": {
+      "status": "active",
+      "path": "nodes/exchange_rates.py"
+    },
+    "US.FTRI": {
+      "status": "active",
+      "path": "nodes/trade_facilitation_index.py"
+    },
+    "US.FdiFlowsStock": {
+      "status": "active",
+      "path": "nodes/fdi_flows_and_stock.py"
+    },
+    "US.FleetBeneficialOwners": {
+      "status": "active",
+      "path": "nodes/fleet_beneficial_owners.py"
+    },
+    "US.GDPComponent": {
+      "status": "active",
+      "path": "nodes/gdp_by_expenditure_and_activity.py"
+    },
+    "US.GDPGR": {
+      "status": "active",
+      "path": "nodes/gdp_growth_rates.py"
+    },
+    "US.GDPTotal": {
+      "status": "active",
+      "path": "nodes/gdp_total_and_per_capita.py"
+    },
+    "US.GNI": {
+      "status": "active",
+      "path": "nodes/gni_total_and_per_capita.py"
+    },
+    "US.Gender_DomesticValueAdded": {
+      "status": "active",
+      "path": "nodes/gender_domestic_value_added.py"
+    },
+    "US.Gender_TradableIndustries": {
+      "status": "active",
+      "path": "nodes/gender_tradable_industries.py"
+    },
+    "US.GoodsAndServBalanceBpm6": {
+      "status": "active",
+      "path": "nodes/goods_and_services_balance_bpm6.py"
+    },
+    "US.GoodsAndServTradeOpennessBpm6": {
+      "status": "active",
+      "path": "nodes/trade_openness_bpm6.py"
+    },
+    "US.GoodsAndServicesBpm6": {
+      "status": "active",
+      "path": "nodes/goods_and_services_bpm6.py"
+    },
+    "US.GovExpenditures": {
+      "status": "active",
+      "path": "nodes/government_expenditures.py"
+    },
+    "US.HiddenPlasticsTradebyPartner": {
+      "status": "active",
+      "path": "nodes/hidden_plastics_trade.py"
+    },
+    "US.IctGoodsShare": {
+      "status": "active",
+      "path": "nodes/ict_goods_share.py"
+    },
+    "US.IctGoodsValue": {
+      "status": "active",
+      "path": "nodes/ict_goods_value.py"
+    },
+    "US.IctProductionSector": {
+      "status": "active",
+      "path": "nodes/ict_production_sector.py"
+    },
+    "US.IctUseEconActivity": {
+      "status": "active",
+      "path": "nodes/ict_use_by_activity.py"
+    },
+    "US.IctUseEconActivity_Isic4": {
+      "status": "active",
+      "path": "nodes/ict_use_by_activity_isic4.py"
+    },
+    "US.IctUseEnterprSize": {
+      "status": "active",
+      "path": "nodes/ict_use_by_enterprise_size.py"
+    },
+    "US.IctUseLocation": {
+      "status": "active",
+      "path": "nodes/ict_use_by_location.py"
+    },
+    "US.InclusiveGrowth": {
+      "status": "active",
+      "path": "nodes/inclusive_growth.py"
+    },
+    "US.IntraTrade": {
+      "status": "pending"
+    },
+    "US.LSBCI": {
+      "status": "active",
+      "path": "nodes/liner_shipping_bilateral_connectivity.py"
+    },
+    "US.LSCI": {
+      "status": "active",
+      "path": "nodes/liner_shipping_connectivity_annual.py"
+    },
+    "US.LSCI_M": {
+      "status": "active",
+      "path": "nodes/liner_shipping_connectivity_monthly.py"
+    },
+    "US.MerchTheilIndices": {
+      "status": "active",
+      "path": "nodes/merchandise_theil_indices.py"
+    },
+    "US.MerchVolumeQuarterly": {
+      "status": "active",
+      "path": "nodes/merchandise_volume_quarterly.py"
+    },
+    "US.MerchantFleet": {
+      "status": "active",
+      "path": "nodes/merchant_fleet.py"
+    },
+    "US.NonPlasticSubstsTradeByPartner": {
+      "status": "active",
+      "path": "nodes/non_plastic_substitutes_trade.py"
+    },
+    "US.OceanExportsPerCapitaIndividualEconomies": {
+      "status": "active",
+      "path": "nodes/ocean_exports_per_capita_individual.py"
+    },
+    "US.OceanExportsPerCapitaRegionalAggregates": {
+      "status": "active",
+      "path": "nodes/ocean_exports_per_capita_regional.py"
+    },
+    "US.OceanRCAIndividualEconomies": {
+      "status": "active",
+      "path": "nodes/ocean_rca_individual.py"
+    },
+    "US.OceanRCARegionalAggregates": {
+      "status": "active",
+      "path": "nodes/ocean_rca_regional.py"
+    },
+    "US.OceanServices": {
+      "status": "active",
+      "path": "nodes/ocean_services.py"
+    },
+    "US.OceanTheilIndicesIndividualEconomies": {
+      "status": "active",
+      "path": "nodes/ocean_theil_indices.py"
+    },
+    "US.OceanTradeIndividualEconomies": {
+      "status": "active",
+      "path": "nodes/ocean_trade_individual.py"
+    },
+    "US.OceanTradeRegionalAggregates": {
+      "status": "active",
+      "path": "nodes/ocean_trade_regional.py"
+    },
+    "US.PCI": {
+      "status": "active",
+      "path": "nodes/productive_capacities_index.py"
+    },
+    "US.PLSCI": {
+      "status": "active",
+      "path": "nodes/port_liner_shipping_connectivity.py"
+    },
+    "US.PlasticsTradebyPartner": {
+      "status": "active",
+      "path": "nodes/plastics_trade_by_partner.py"
+    },
+    "US.PopAgeStruct": {
+      "status": "active",
+      "path": "nodes/population_structure_by_age_gender.py"
+    },
+    "US.PopDependency": {
+      "status": "active",
+      "path": "nodes/population_dependency_ratios.py"
+    },
+    "US.PopGR": {
+      "status": "active",
+      "path": "nodes/population_growth_rates.py"
+    },
+    "US.PopTotal": {
+      "status": "active",
+      "path": "nodes/population_total_and_urban.py"
+    },
+    "US.PortCalls": {
+      "status": "active",
+      "path": "nodes/port_calls.py"
+    },
+    "US.PortCallsArrivals": {
+      "status": "active",
+      "path": "nodes/port_calls_arrivals.py"
+    },
+    "US.PortCallsArrivals_S": {
+      "status": "active",
+      "path": "nodes/port_calls_arrivals_ships.py"
+    },
+    "US.PortCalls_S": {
+      "status": "active",
+      "path": "nodes/port_calls_ships.py"
+    },
+    "US.RCA": {
+      "status": "pending"
+    },
+    "US.Remittances": {
+      "status": "active",
+      "path": "nodes/personal_remittances.py"
+    },
+    "US.SeaborneTrade": {
+      "status": "active",
+      "path": "nodes/seaborne_trade.py"
+    },
+    "US.Seafarers": {
+      "status": "active",
+      "path": "nodes/seafarers.py"
+    },
+    "US.ShipBuilding": {
+      "status": "active",
+      "path": "nodes/ship_building.py"
+    },
+    "US.ShipScrapping": {
+      "status": "active",
+      "path": "nodes/ship_scrapping.py"
+    },
+    "US.Tariff": {
+      "status": "active",
+      "path": "nodes/import_tariff_rates.py"
+    },
+    "US.TermsOfTrade": {
+      "status": "active",
+      "path": "nodes/merchandise_terms_of_trade.py"
+    },
+    "US.TotAndComServicesQuarterly": {
+      "status": "active",
+      "path": "nodes/services_trade_quarterly.py"
+    },
+    "US.TradeFoodCatByProc": {
+      "status": "active",
+      "path": "nodes/food_trade_by_processing.py"
+    },
+    "US.TradeFoodProcByCat": {
+      "status": "active",
+      "path": "nodes/food_trade_processing_by_category.py"
+    },
+    "US.TradeFoodProcCat_Cat_RCA": {
+      "status": "active",
+      "path": "nodes/food_trade_rca_by_category.py"
+    },
+    "US.TradeFoodProcCat_Proc_RCA": {
+      "status": "active",
+      "path": "nodes/food_trade_rca_by_processing.py"
+    },
+    "US.TradeMatrix": {
+      "status": "pending"
+    },
+    "US.TradeMerchBalance": {
+      "status": "active",
+      "path": "nodes/merchandise_trade_balance.py"
+    },
+    "US.TradeMerchGR": {
+      "status": "active",
+      "path": "nodes/merchandise_trade_growth_rates.py"
+    },
+    "US.TradeMerchTotal": {
+      "status": "active",
+      "path": "nodes/merchandise_total_trade.py"
+    },
+    "US.TradeServCatByPartner": {
+      "status": "active",
+      "path": "nodes/services_by_category.py"
+    },
+    "US.TradeServCatTotal": {
+      "status": "pending"
+    },
+    "US.TradeServICT": {
+      "status": "active",
+      "path": "nodes/services_trade_ict.py"
+    },
+    "US.TransportCosts": {
+      "status": "active",
+      "path": "nodes/transport_costs.py"
+    },
+    "US.UCPI_A": {
+      "status": "active",
+      "path": "nodes/unit_value_indices_annual.py"
+    },
+    "US.UCPI_M": {
+      "status": "active",
+      "path": "nodes/unit_value_indices_monthly.py"
+    },
+    "US.VesselValueByOwnership": {
+      "status": "active",
+      "path": "nodes/vessel_value_by_ownership.py"
+    },
+    "US.VesselValueByRegistration": {
+      "status": "active",
+      "path": "nodes/vessel_value_by_registration.py"
+    }
+  }
+}
