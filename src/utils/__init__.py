@@ -1,78 +1,42 @@
-"""UNCTAD connector utilities.
+"""UNCTAD connector utilities."""
+import io
+import os
+import tempfile
+import py7zr
+import pyarrow.csv as pac
+from subsets_utils import get
 
-Shared helper functions for parsing and transforming UNCTAD data.
-"""
 
-from subsets_utils import load_raw_parquet, load_raw_json
+def download_dataset(report_name: str):
+    """Download a dataset from UNCTAD API.
 
+    Args:
+        report_name: UNCTAD report name (e.g., 'US.TradeMerchTotal')
 
-def load_raw(asset_id: str) -> list[dict]:
-    """Load raw data, trying Parquet first then JSON.
-
-    Returns list of dicts for backward compatibility with existing transforms.
+    Returns:
+        PyArrow table with the dataset
     """
-    try:
-        table = load_raw_parquet(asset_id)
-        return table.to_pylist()
-    except FileNotFoundError:
-        return load_raw_json(asset_id)
+    # Get file metadata
+    metadata_url = f"https://unctadstat-api.unctad.org/api/reportMetadata/{report_name}/bulkfiles/en"
+    metadata_resp = get(metadata_url)
+    file_metadata = metadata_resp.json()[0]
+    file_id = file_metadata["fileId"]
 
+    # Download the 7z archive
+    download_url = f"https://unctadstat-api.unctad.org/api/reportMetadata/{report_name}/bulkfile/{file_id}/en"
+    download_resp = get(download_url)
+    archive_data = io.BytesIO(download_resp.content)
 
-MONTH_MAP = {
-    "Jan.": "01", "January": "01",
-    "Feb.": "02", "February": "02",
-    "Mar.": "03", "March": "03",
-    "Apr.": "04", "April": "04",
-    "May": "05",
-    "Jun.": "06", "June": "06",
-    "Jul.": "07", "July": "07",
-    "Aug.": "08", "August": "08",
-    "Sep.": "09", "September": "09",
-    "Oct.": "10", "October": "10",
-    "Nov.": "11", "November": "11",
-    "Dec.": "12", "December": "12",
-}
+    # Extract CSV from archive to temp directory
+    with tempfile.TemporaryDirectory() as tmpdir:
+        with py7zr.SevenZipFile(archive_data, mode="r") as archive:
+            csv_files = [f for f in archive.getnames() if f.endswith(".csv")]
+            archive.extractall(path=tmpdir)
 
+        csv_path = os.path.join(tmpdir, csv_files[0])
+        table = pac.read_csv(csv_path)
+        # Normalize column names
+        new_names = [c.lower().replace(" ", "_") for c in table.column_names]
+        table = table.rename_columns(new_names)
 
-def parse_value(val) -> float | None:
-    """Parse UNCTAD value to float, returning None for empty/missing.
-
-    Handles both string values (from JSON) and numeric values (from Parquet).
-    """
-    if val is None:
-        return None
-    if isinstance(val, (int, float)):
-        return float(val)
-    if isinstance(val, str):
-        if not val or val.strip() == "":
-            return None
-        try:
-            return float(val)
-        except ValueError:
-            return None
-    return None
-
-
-def parse_month(val: str) -> str:
-    """Convert 'Jan. 1995' to '1995-01' format."""
-    parts = val.split()
-    if len(parts) == 2:
-        month_abbr, year = parts
-        if month_abbr in MONTH_MAP:
-            return f"{year}-{MONTH_MAP[month_abbr]}"
-    return val
-
-
-def parse_quarter(val: str) -> str:
-    """Convert 'Q1 2005' to '2005-Q1' format."""
-    parts = val.split()
-    if len(parts) == 2 and parts[0].startswith("Q"):
-        return f"{parts[1]}-{parts[0]}"
-    return val
-
-
-def to_str(val) -> str:
-    """Convert value to string. Handles int/float from Parquet."""
-    if val is None:
-        return ""
-    return str(val)
+    return table

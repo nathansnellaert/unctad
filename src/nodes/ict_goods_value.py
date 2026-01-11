@@ -1,47 +1,13 @@
-"""Transform Ict Goods Value data."""
-import pyarrow as pa
-from subsets_utils import upload_data, sync_metadata
-from ..utils import load_raw, parse_value
-from subsets_utils import validate
+"""Fetch Ict Goods Value from UNCTAD."""
+from utils import download_dataset
+from subsets_utils import sync_data, save_state
 
+REPORT = "US.IctGoodsValue"
 DATASET_ID = "unctad_ict_goods_value"
-
-METADATA = {
-    "title": "UNCTAD ICT Goods Value",
-    "description": "",  # TODO: Add description after profiling
-    "column_descriptions": {},  # TODO: Add column descriptions after profiling
-}
-
-
-def test(table: pa.Table) -> None:
-    """Validate ict_goods_value dataset."""
-    raise NotImplementedError("Test not yet implemented - implement after transform")
-
-    # validate(table, {
-    #     "columns": {
-    #         # TODO: Add columns after profiling
-    #     },
-    #     "not_null": [],
-    #     "min_rows": 100,
-    # })
 
 
 def run():
-    """Transform ict_goods_value data."""
-    raise NotImplementedError("Transform not yet implemented - profile raw data first")
-
-    # raw = load_raw("ict_goods_value")
-    #
-    # records = []
-    # for row in raw:
-    #     records.append({
-    #         # TODO: Map columns after profiling
-    #     })
-    #
-    # table = pa.Table.from_pylist(records)
-    # print(f"  Transformed {len(table):,} records")
-    #
-    # test(table)
-    #
-    # upload_data(table, DATASET_ID)
-    # sync_metadata(DATASET_ID, METADATA)
+    table = download_dataset(REPORT)
+    sync_data(table, DATASET_ID)
+    save_state("ict_goods_value", {"rows": len(table)})
+    print(f"  {DATASET_ID}: {len(table):,} rows")
