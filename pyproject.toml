@@ -17,6 +17,8 @@ dependencies = [
     "sqlalchemy>=2.0.43",
 ]
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.uv]
-dev-dependencies = [
-    "psutil>=5.9.0",]
+dev-dependencies = ["psutil>=5.9.0"]

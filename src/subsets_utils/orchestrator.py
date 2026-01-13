@@ -1,26 +1,7 @@
-"""Simple DAG execution with task tracking.
-
-Usage:
-    from subsets_utils import DAG
-
-    workflow = DAG({
-        ingest: [],
-        transform: [ingest],
-    })
-
-    workflow.run()                        # Run all nodes
-    workflow.run(targets=["transform"])   # Run single node (assumes deps ran)
-
-CLI pattern for main.py:
-    if __name__ == "__main__":
-        import argparse
-        parser = argparse.ArgumentParser()
-        parser.add_argument("--target", help="Run specific node")
-        args = parser.parse_args()
-        workflow.run(targets=[args.target] if args.target else None)
-"""
+import importlib.util
 import json
 import os
+import sys
 import traceback
 import multiprocessing
 from datetime import datetime
@@ -254,3 +235,51 @@ class DAG:
         path.write_text(json.dumps(self.to_json(), indent=2))
 
 
+def load_nodes(nodes_dir: Path | str | None = None) -> DAG:
+    if nodes_dir is None:
+        nodes_dir = Path.cwd() / "src" / "nodes"
+    elif isinstance(nodes_dir, str):
+        nodes_dir = Path(nodes_dir)
+
+    print(f"Loading nodes from: {nodes_dir}")
+
+    all_nodes: dict[Callable, list[Callable]] = {}
+
+    if not nodes_dir.exists():
+        print(f"Warning: nodes directory not found: {nodes_dir}")
+        return DAG(all_nodes)
+
+    node_files = sorted(nodes_dir.glob("*.py"))
+
+    for node_file in node_files:
+        if node_file.name.startswith("_"):
+            continue
+
+        module_name = f"nodes.{node_file.stem}"
+
+        try:
+            # Load module dynamically
+            spec = importlib.util.spec_from_file_location(module_name, node_file)
+            if spec is None or spec.loader is None:
+                print(f"Warning: Could not load spec for {node_file}")
+                continue
+
+            module = importlib.util.module_from_spec(spec)
+            sys.modules[module_name] = module
+            spec.loader.exec_module(module)
+
+            # Extract NODES dict if present
+            if hasattr(module, "NODES"):
+                nodes_dict = getattr(module, "NODES")
+                if isinstance(nodes_dict, dict):
+                    # Convert {download: transform} to DAG format
+                    for download_fn, transform_fn in nodes_dict.items():
+                        all_nodes[download_fn] = []
+                        all_nodes[transform_fn] = [download_fn]
+
+        except Exception as e:
+            print(f"Error loading {node_file.name}: {e}")
+            raise
+
+    print(f"Loaded {len(all_nodes) // 2} nodes")
+    return DAG(all_nodes)

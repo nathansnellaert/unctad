@@ -1,23 +1,29 @@
-"""Download and transform OceanRCARegionalAggregates."""
 from utils import download_dataset
-from subsets_utils import save_raw_parquet, load_raw_parquet, sync_data
+from subsets_utils import save_raw_parquet, load_raw_parquet, upload_data, load_state, save_state, data_hash
 
-REPORT = "US.OceanRCARegionalAggregates"
-DATASET_ID = "unctad_ocean_rca_regional"
-
+## currently using generic scaffolded node file until we implement dataset specific transforms
+UNCTAD_DATASET_ID = "US.OceanRCARegionalAggregates"
+SUBSET_DATASET_ID = "unctad_ocean_rca_regional"
 
 def download():
-    """Download US.OceanRCARegionalAggregates from UNCTAD API."""
-    table = download_dataset(REPORT)
-    save_raw_parquet(table, "ocean_rca_regional")
-    print(f"  Downloaded {REPORT}: {table.num_rows:,} rows")
-
+    table = download_dataset(UNCTAD_DATASET_ID)
+    save_raw_parquet(table, UNCTAD_DATASET_ID)
 
 def transform():
-    """Transform and upload unctad_ocean_rca_regional."""
-    table = load_raw_parquet("ocean_rca_regional")
+    table = load_raw_parquet(UNCTAD_DATASET_ID)
 
-    # TODO: Add custom transform logic here
+    h = data_hash(table)
+    if load_state(SUBSET_DATASET_ID).get("hash") == h:
+        print(f"Skipping {SUBSET_DATASET_ID} - unchanged")
+        return
 
-    sync_data(table, DATASET_ID)
-    print(f"  Uploaded {DATASET_ID}: {table.num_rows:,} rows")
+    upload_data(table, SUBSET_DATASET_ID)
+    save_state(SUBSET_DATASET_ID, {"hash": h})
+
+NODES = {
+    download: transform
+}
+
+if __name__ == "__main__":
+    download()
+    transform()
