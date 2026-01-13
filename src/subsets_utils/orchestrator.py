@@ -43,17 +43,26 @@ class DAG:
         self.nodes = nodes
         self.state = {}
         self._fn_to_id = {}  # Map function to its ID
+        self._id_to_fn = {}  # Reverse lookup
+        self._dependents = {}  # Reverse graph: node -> list of nodes that depend on it
 
-        # Initialize state for each node
+        # Initialize state and reverse lookup for each node
         for fn in nodes:
             task_id = _get_task_id(fn)
             self._fn_to_id[fn] = task_id
+            self._id_to_fn[task_id] = fn
+            self._dependents[fn] = []
             self.state[task_id] = {
                 "id": task_id,
                 "status": "pending",
                 "reads": [],
                 "writes": [],
             }
+
+        # Build reverse dependency graph
+        for fn, deps in nodes.items():
+            for dep in deps:
+                self._dependents[dep].append(fn)
 
     def _topological_order(self) -> list[Callable]:
         """Return functions in dependency order.
@@ -81,6 +90,37 @@ class DAG:
             raise ValueError("Cycle detected in DAG")
 
         return order
+
+    def _cleanup_upstream_cache(self, fn: Callable):
+        """Clean up cached files from upstream nodes if all their dependents are done.
+
+        After a node completes, check each of its dependencies. If ALL nodes that
+        depend on that dependency have completed, the dependency's outputs are no
+        longer needed and can be deleted from cache.
+        """
+        from .config import is_cloud, cache_path, raw_key
+
+        if not is_cloud():
+            return  # Only clean up in cloud mode
+
+        for dep in self.nodes[fn]:
+            dep_id = self._fn_to_id[dep]
+            dependents = self._dependents[dep]
+
+            # Check if ALL dependents of this dependency have completed
+            all_done = all(
+                self.state[self._fn_to_id[d]]["status"] in ("done", "failed", "skipped")
+                for d in dependents
+            )
+
+            if all_done:
+                # Delete cached files written by this dependency
+                dep_writes = self.state[dep_id].get("writes", [])
+                for asset in dep_writes:
+                    cache_file = Path(cache_path(raw_key(asset, "parquet")))
+                    if cache_file.exists():
+                        cache_file.unlink()
+                        print(f"[DAG] Cleaned up cache: {asset}")
 
     def _run_task(self, fn: Callable, isolate: bool = False) -> dict:
         """Run a single task, optionally in subprocess for memory isolation."""
@@ -197,6 +237,7 @@ class DAG:
             print(f"[DAG] Running {task_id}...")
             result = self._run_task(fn, isolate=isolate)
             self.save_state()  # Implicit checkpoint after each node
+            self._cleanup_upstream_cache(fn)  # Free disk space from completed upstream nodes
 
             if result["status"] == "done":
                 print(f"[DAG] {task_id} done ({result['duration_s']:.1f}s)")
