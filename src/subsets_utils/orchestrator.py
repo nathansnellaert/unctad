@@ -7,26 +7,8 @@ import multiprocessing
 from datetime import datetime
 from pathlib import Path
 from typing import Callable
-from contextvars import ContextVar
 
-# Current task context for IO tracking
-_current_task: ContextVar[dict | None] = ContextVar('current_task', default=None)
-
-
-def track_read(asset: str):
-    """Track a read operation. Called by IO functions."""
-    task = _current_task.get()
-    if task is not None:
-        task["reads"].append(asset)
-
-
-def track_write(asset: str, rows: int = None):
-    """Track a write operation. Called by IO functions."""
-    task = _current_task.get()
-    if task is not None:
-        task["writes"].append(asset)
-        if rows:
-            task["rows_written"] = task.get("rows_written", 0) + rows
+from .tracking import set_current_task, get_assets_by_writer, clear_tracking
 
 
 def _get_task_id(fn: Callable) -> str:
@@ -91,28 +73,34 @@ class DAG:
 
         return order
 
-    def _cleanup_cache(self):
-        """Clean up all cached raw parquet files to free disk space.
+    def _cleanup_cache(self, fn: Callable):
+        """Clean up cached files from upstream nodes if all their dependents are done.
 
-        Called after each node completes. Since data is uploaded to R2,
-        local cache is not needed and can be deleted to prevent disk full errors.
+        After a node completes, check each of its dependencies. If ALL nodes that
+        depend on that dependency have completed, delete the files it wrote.
         """
-        from .config import is_cloud, get_cache_dir
+        from .config import is_cloud, cache_path
 
         if not is_cloud():
             return
 
-        cache_dir = Path(get_cache_dir())
-        if not cache_dir.exists():
-            return
+        for dep in self.nodes[fn]:
+            dep_id = self._fn_to_id[dep]
+            dependents = self._dependents[dep]
 
-        # Delete all parquet files in the raw cache (path: <cache>/<connector>/data/raw/*.parquet)
-        for f in cache_dir.glob("*/data/raw/*.parquet"):
-            try:
-                f.unlink()
-                print(f"[DAG] Cleaned up cache: {f.name}")
-            except OSError:
-                pass
+            # Check if ALL dependents of this dependency have completed
+            all_done = all(
+                self.state[self._fn_to_id[d]]["status"] in ("done", "failed", "skipped")
+                for d in dependents
+            )
+
+            if all_done:
+                # Delete cached files written by this dependency
+                for asset_path in get_assets_by_writer(dep_id):
+                    cache_file = Path(cache_path(asset_path))
+                    if cache_file.exists():
+                        cache_file.unlink()
+                        print(f"[DAG] Cleaned up cache: {asset_path}")
 
     def _run_task(self, fn: Callable, isolate: bool = False) -> dict:
         """Run a single task, optionally in subprocess for memory isolation."""
@@ -129,7 +117,7 @@ class DAG:
     def _run_inline(self, fn: Callable, task_state: dict) -> dict:
         """Run task in current process."""
         # Set context for IO tracking
-        _current_task.set(task_state)
+        set_current_task(task_state["id"])
 
         try:
             fn()
@@ -143,25 +131,20 @@ class DAG:
             started = datetime.fromisoformat(task_state["started_at"])
             finished = datetime.fromisoformat(task_state["finished_at"])
             task_state["duration_s"] = (finished - started).total_seconds()
-            _current_task.set(None)
+            set_current_task(None)
 
         return task_state
 
     def _run_in_subprocess(self, fn: Callable, task_state: dict) -> dict:
         """Run task in subprocess for memory isolation."""
-        def worker(fn, queue):
+        def worker(fn, task_id, queue):
             # Re-setup context in subprocess
-            local_state = {"reads": [], "writes": [], "rows_written": 0}
-            _current_task.set(local_state)
+            from .tracking import set_current_task
+            set_current_task(task_id)
 
             try:
                 fn()
-                queue.put({
-                    "status": "done",
-                    "reads": local_state["reads"],
-                    "writes": local_state["writes"],
-                    "rows_written": local_state.get("rows_written", 0),
-                })
+                queue.put({"status": "done"})
             except Exception as e:
                 queue.put({
                     "status": "failed",
@@ -170,7 +153,7 @@ class DAG:
                 })
 
         queue = multiprocessing.Queue()
-        proc = multiprocessing.Process(target=worker, args=(fn, queue))
+        proc = multiprocessing.Process(target=worker, args=(fn, task_state["id"], queue))
         proc.start()
         proc.join()
 
@@ -194,6 +177,9 @@ class DAG:
             DAG_TARGET: Comma-separated node names to run (overrides targets arg)
             DAG_ON_FAILURE: "crash" (default) or "continue"
         """
+        # Reset tracking state for fresh run
+        clear_tracking()
+
         # Env var overrides targets arg
         env_targets = os.environ.get("DAG_TARGET")
         if env_targets:
@@ -229,7 +215,7 @@ class DAG:
             print(f"[DAG] Running {task_id}...")
             result = self._run_task(fn, isolate=isolate)
             self.save_state()  # Implicit checkpoint after each node
-            self._cleanup_cache()  # Free disk space after each node
+            self._cleanup_cache(fn)  # Free disk space from completed upstream nodes
 
             if result["status"] == "done":
                 print(f"[DAG] {task_id} done ({result['duration_s']:.1f}s)")

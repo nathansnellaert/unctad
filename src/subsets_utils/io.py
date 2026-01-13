@@ -399,6 +399,8 @@ def load_raw_json(asset_id: str) -> any:
 
 def save_raw_parquet(data: pa.Table, asset_id: str, metadata: dict = None) -> str:
     """Save raw PyArrow table as Parquet."""
+    from .tracking import record_write
+
     if metadata:
         existing = data.schema.metadata or {}
         existing[b'asset_metadata'] = json.dumps(metadata).encode('utf-8')
@@ -406,7 +408,7 @@ def save_raw_parquet(data: pa.Table, asset_id: str, metadata: dict = None) -> st
 
     if _is_cloud_mode():
         key = _raw_key(asset_id, "parquet")
-        cache_path = _get_cache_path(key)
+        cache_file = _get_cache_path(key)
 
         # Estimate size and evict if needed
         buffer = io.BytesIO()
@@ -414,11 +416,15 @@ def save_raw_parquet(data: pa.Table, asset_id: str, metadata: dict = None) -> st
         _evict_if_needed(buffer.tell())
 
         # Write to cache
-        cache_path.write_bytes(buffer.getvalue())
+        cache_file.write_bytes(buffer.getvalue())
 
         # Upload to R2
-        uri = upload_file(str(cache_path), key)
+        uri = upload_file(str(cache_file), key)
         print(f"  -> R2: Saved {asset_id}.parquet ({data.num_rows:,} rows)")
+
+        # Track the write for DAG cleanup
+        record_write(key)
+
         return uri
     else:
         path = _raw_path(asset_id, "parquet")
