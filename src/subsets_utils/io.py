@@ -137,9 +137,6 @@ def sync_data(data: pa.Table, dataset_name: str, mode: str = "overwrite") -> str
 
 def upload_data(data: pa.Table, dataset_name: str, metadata: dict = None, mode: str = "append", merge_key: str = None) -> str:
     """Upload a PyArrow table to a Delta table."""
-    from .orchestrator import track_write
-    track_write(f"subsets/{dataset_name}", rows=len(data))
-
     if mode not in ("append", "overwrite", "merge"):
         raise ValueError(f"Invalid mode '{mode}'. Must be 'append', 'overwrite', or 'merge'.")
     if mode == "merge" and not merge_key:
@@ -402,9 +399,6 @@ def load_raw_json(asset_id: str) -> any:
 
 def save_raw_parquet(data: pa.Table, asset_id: str, metadata: dict = None) -> str:
     """Save raw PyArrow table as Parquet."""
-    from .orchestrator import track_write
-    track_write(f"raw/{asset_id}", rows=data.num_rows)
-
     if metadata:
         existing = data.schema.metadata or {}
         existing[b'asset_metadata'] = json.dumps(metadata).encode('utf-8')
@@ -435,9 +429,6 @@ def save_raw_parquet(data: pa.Table, asset_id: str, metadata: dict = None) -> st
 
 def load_raw_parquet(asset_id: str) -> pa.Table:
     """Load raw Parquet file as PyArrow table."""
-    from .dag import track_read
-    track_read(f"raw/{asset_id}")
-
     if _is_cloud_mode():
         key = _raw_key(asset_id, "parquet")
 

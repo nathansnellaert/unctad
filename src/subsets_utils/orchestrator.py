@@ -91,36 +91,28 @@ class DAG:
 
         return order
 
-    def _cleanup_upstream_cache(self, fn: Callable):
-        """Clean up cached files from upstream nodes if all their dependents are done.
+    def _cleanup_cache(self):
+        """Clean up all cached raw parquet files to free disk space.
 
-        After a node completes, check each of its dependencies. If ALL nodes that
-        depend on that dependency have completed, the dependency's outputs are no
-        longer needed and can be deleted from cache.
+        Called after each node completes. Since data is uploaded to R2,
+        local cache is not needed and can be deleted to prevent disk full errors.
         """
-        from .config import is_cloud, cache_path, raw_key
+        from .config import is_cloud, get_cache_dir
 
         if not is_cloud():
-            return  # Only clean up in cloud mode
+            return
 
-        for dep in self.nodes[fn]:
-            dep_id = self._fn_to_id[dep]
-            dependents = self._dependents[dep]
+        cache_dir = Path(get_cache_dir())
+        if not cache_dir.exists():
+            return
 
-            # Check if ALL dependents of this dependency have completed
-            all_done = all(
-                self.state[self._fn_to_id[d]]["status"] in ("done", "failed", "skipped")
-                for d in dependents
-            )
-
-            if all_done:
-                # Delete cached files written by this dependency
-                dep_writes = self.state[dep_id].get("writes", [])
-                for asset in dep_writes:
-                    cache_file = Path(cache_path(raw_key(asset, "parquet")))
-                    if cache_file.exists():
-                        cache_file.unlink()
-                        print(f"[DAG] Cleaned up cache: {asset}")
+        # Delete all parquet files in the raw cache (path: <cache>/<connector>/data/raw/*.parquet)
+        for f in cache_dir.glob("*/data/raw/*.parquet"):
+            try:
+                f.unlink()
+                print(f"[DAG] Cleaned up cache: {f.name}")
+            except OSError:
+                pass
 
     def _run_task(self, fn: Callable, isolate: bool = False) -> dict:
         """Run a single task, optionally in subprocess for memory isolation."""
@@ -237,7 +229,7 @@ class DAG:
             print(f"[DAG] Running {task_id}...")
             result = self._run_task(fn, isolate=isolate)
             self.save_state()  # Implicit checkpoint after each node
-            self._cleanup_upstream_cache(fn)  # Free disk space from completed upstream nodes
+            self._cleanup_cache()  # Free disk space after each node
 
             if result["status"] == "done":
                 print(f"[DAG] {task_id} done ({result['duration_s']:.1f}s)")
