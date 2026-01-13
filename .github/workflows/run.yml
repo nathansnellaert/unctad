@@ -35,6 +35,7 @@ jobs:
         PYTHONUNBUFFERED: 1
         CI: 'true'
         ENABLE_LOGGING: 'true'
+        CONNECTOR_NAME: 'unctad'
         R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
         R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
         R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
