@@ -336,11 +336,12 @@ def save_raw_parquet(data: pa.Table, asset_id: str, metadata: dict = None) -> st
         key = raw_key(asset_id, "parquet")
         cpath = cache_path(key)
 
+        # Evict BEFORE writing - estimate compressed size as 50% of in-memory size
+        estimated_size = max(data.nbytes // 2, 100 * 1024 * 1024)  # At least 100MB headroom
+        _evict_if_needed(estimated_size)
+
         # Write to local cache first (streams to disk, memory efficient)
         pq.write_table(data, cpath, compression='snappy')
-
-        # Evict old files if needed based on what we just wrote
-        _evict_if_needed(Path(cpath).stat().st_size)
 
         # Upload to R2
         uri = upload_file(cpath, key)
