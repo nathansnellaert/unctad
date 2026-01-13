@@ -89,6 +89,14 @@ def _compute_table_hash(table: pa.Table) -> str:
     return hashlib.sha256(buffer.getvalue()).hexdigest()[:16]
 
 
+def data_hash(table: pa.Table) -> str:
+    """Fast hash based on row count + schema. Use with state to detect changes."""
+    h = hashlib.md5()
+    h.update(f"{len(table)}".encode())
+    h.update(str(table.schema).encode())
+    return h.hexdigest()[:16]
+
+
 def _get_hash_state_key(dataset_name: str) -> str:
     return f"_hash_{dataset_name}"
 
