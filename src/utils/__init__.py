@@ -28,11 +28,12 @@ def download_dataset(report_name: str):
     download_resp = get(download_url)
     archive_data = io.BytesIO(download_resp.content)
 
-    # Extract CSV from archive to temp directory
+    # Extract only the CSV file from archive (not all files)
     with tempfile.TemporaryDirectory() as tmpdir:
         with py7zr.SevenZipFile(archive_data, mode="r") as archive:
             csv_files = [f for f in archive.getnames() if f.endswith(".csv")]
-            archive.extractall(path=tmpdir)
+            # Only extract the CSV file we need, not everything
+            archive.extract(path=tmpdir, targets=csv_files[:1])
 
         csv_path = os.path.join(tmpdir, csv_files[0])
 
