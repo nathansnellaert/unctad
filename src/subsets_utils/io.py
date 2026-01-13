@@ -439,8 +439,15 @@ def save_raw_parquet(data: pa.Table, asset_id: str, metadata: dict = None) -> st
         uri = upload_file(str(cache_file), key)
         print(f"  -> R2: Saved {asset_id}.parquet ({data.num_rows:,} rows)")
 
-        # Track the write for DAG cleanup
+        # Track the write for DAG cleanup (transform will re-download from R2)
         record_write(key)
+
+        # Delete cache immediately to free disk space for next download
+        # Transform will re-download from R2 if needed
+        try:
+            cache_file.unlink()
+        except OSError:
+            pass
 
         return uri
     else:
