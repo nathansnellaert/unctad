@@ -14,8 +14,17 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 from deltalake import write_deltalake, DeltaTable
 from . import debug
-from .environment import get_data_dir
-from .r2 import _is_cloud_mode, upload_bytes, upload_file, download_bytes, get_storage_options, get_delta_table_uri, get_bucket_name, get_connector_name
+from .config import get_data_dir, is_cloud, get_storage_options, subsets_uri, get_bucket_name, get_connector_name, raw_key, cache_path, raw_path, state_key, state_path
+from .r2 import upload_bytes, upload_file, download_bytes
+
+# Aliases for compatibility
+_is_cloud_mode = is_cloud
+_raw_key = raw_key
+_get_cache_path = lambda key: Path(cache_path(key))
+_raw_path = raw_path
+_state_key = state_key
+_state_path = state_path
+get_delta_table_uri = subsets_uri
 
 
 # --- Cloud mode disk cache ---
