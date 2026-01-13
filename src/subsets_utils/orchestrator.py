@@ -56,7 +56,12 @@ class DAG:
             }
 
     def _topological_order(self) -> list[Callable]:
-        """Return functions in dependency order."""
+        """Return functions in dependency order.
+
+        Uses DFS-style ordering to run dependent nodes immediately after their
+        dependencies complete. This ensures download→transform pairs run together,
+        freeing disk space before the next download.
+        """
         in_degree = {fn: len(deps) for fn, deps in self.nodes.items()}
         ready = [fn for fn, deg in in_degree.items() if deg == 0]
         order = []
@@ -69,7 +74,8 @@ class DAG:
                 if fn in deps:
                     in_degree[other_fn] -= 1
                     if in_degree[other_fn] == 0:
-                        ready.append(other_fn)
+                        # Insert at FRONT to run dependent immediately (DFS-style)
+                        ready.insert(0, other_fn)
 
         if len(order) != len(self.nodes):
             raise ValueError("Cycle detected in DAG")
