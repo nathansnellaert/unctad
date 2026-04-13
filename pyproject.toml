@@ -1,0 +1,24 @@
+[project]
+name = "unctad"
+version = "0.1.0"
+description = "UNCTAD data connector"
+requires-python = ">=3.11"
+dependencies = [
+    "psutil>=5.9.0",
+    "httpx",
+    "pyarrow",
+    "tenacity",
+    "boto3",
+    "py7zr",
+    "ratelimit",
+    "duckdb",
+    "requests",
+    "deltalake>=0.17.0",
+    "sqlalchemy>=2.0.43",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.uv]
+dev-dependencies = ["psutil>=5.9.0"]
