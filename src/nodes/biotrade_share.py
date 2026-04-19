@@ -10,10 +10,13 @@ METADATA = {
     "description": "Share of biodiversity-based merchandise trade by economy and partner from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "partner": "Partner economy",
-        "flow": "Trade flow direction (e.g. export, import)",
-        "value": "Trade share value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "partner": "Partner economy code (UN M49)",
+        "partner_label": "Partner economy name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "percentage_of_biotrade_in_total_trade": "Percentage of biotrade in total trade",
     },
 }
 

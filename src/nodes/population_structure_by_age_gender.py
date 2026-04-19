@@ -10,10 +10,13 @@ METADATA = {
     "description": "Population structure broken down by age class and gender from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "sex": "Gender category",
-        "ageclass": "Age group classification",
-        "value": "Population count",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "sex": "Sex code",
+        "sex_label": "Sex",
+        "ageclass": "Age class code",
+        "ageclass_label": "Age class",
+        "absolute_value_in_thousands": "Absolute value in thousands",
     },
 }
 

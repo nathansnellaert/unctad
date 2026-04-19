@@ -10,10 +10,14 @@ METADATA = {
     "description": "Goods and services trade using BPM6 methodology from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "series": "Statistical series",
-        "economy": "Reporting economy",
-        "flow": "Trade flow direction",
-        "value": "Trade value",
+        "series": "Series code",
+        "series_label": "Series name",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "us_at_current_prices_in_millions": "US dollars at current prices in millions",
+        "percentage_of_total_trade_in_goods_and_services": "Percentage of total trade in goods and services",
     },
 }
 

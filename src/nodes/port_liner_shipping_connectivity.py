@@ -10,8 +10,10 @@ METADATA = {
     "description": "Port-level liner shipping connectivity index from UNCTAD.",
     "column_descriptions": {
         "_quarter": "Quarter of observation",
-        "port": "Port name",
-        "value": "Connectivity index value",
+        "quarter_label": "Quarter label",
+        "port": "Port code",
+        "port_label": "Port name",
+        "index_average_q1_2023_100": "Index average q1 2023 100",
     },
 }
 

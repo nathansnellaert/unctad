@@ -10,10 +10,13 @@ METADATA = {
     "description": "ICT usage by economic activity classified under ISIC Rev.4 from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "useofict": "Type of ICT use",
-        "economicactivity": "Economic activity sector (ISIC Rev.4)",
-        "value": "Usage value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "useofict": "ICT usage type code",
+        "useofict_label": "ICT usage type name",
+        "economicactivity": "Economic activity code",
+        "economicactivity_label": "Economic activity name",
+        "percentage": "Percentage",
     },
 }
 

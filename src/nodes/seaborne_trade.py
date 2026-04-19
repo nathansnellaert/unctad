@@ -10,9 +10,11 @@ METADATA = {
     "description": "Seaborne trade volumes by economy and cargo type from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "cargotype": "Type of cargo",
-        "value": "Trade volume",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "cargotype": "Cargo type code",
+        "cargotype_label": "Cargo type name",
+        "metric_tons_in_thousands": "Metric tons in thousands",
     },
 }
 

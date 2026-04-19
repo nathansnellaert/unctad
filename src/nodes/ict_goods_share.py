@@ -10,11 +10,15 @@ METADATA = {
     "description": "Share of ICT goods in total trade by economy and category from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "partner": "Partner economy",
-        "flow": "Trade flow direction (e.g. export, import)",
-        "ictgoodscategory": "ICT goods category",
-        "value": "Share value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "partner": "Partner economy code (UN M49)",
+        "partner_label": "Partner economy name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "ictgoodscategory": "ICT goods category code",
+        "ictgoodscategory_label": "ICT goods category name",
+        "percentage_of_total_merchandise_trade": "Percentage of total merchandise trade",
     },
 }
 

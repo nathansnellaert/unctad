@@ -10,10 +10,13 @@ METADATA = {
     "description": "Theil indices measuring merchandise trade concentration from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "flow": "Trade flow direction (e.g. export, import)",
-        "series": "Theil index series",
-        "value": "Index value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "series": "Series code",
+        "series_label": "Series name",
+        "_index": "Index value",
     },
 }
 

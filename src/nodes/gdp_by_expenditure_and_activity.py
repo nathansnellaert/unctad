@@ -10,9 +10,13 @@ METADATA = {
     "description": "GDP broken down by expenditure component and economic activity from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "component": "GDP component (expenditure or activity)",
-        "value": "GDP component value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "component": "Component code",
+        "component_label": "Component name",
+        "us_at_current_prices_in_millions": "US dollars at current prices in millions",
+        "us_at_constant_prices_2015_in_millions": "US dollars at constant prices 2015 in millions",
+        "percentage_of_gross_domestic_product": "Percentage of gross domestic product",
     },
 }
 

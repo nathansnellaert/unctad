@@ -10,9 +10,13 @@ METADATA = {
     "description": "Concentration and diversification indices for merchandise trade from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "flow": "Trade flow direction (e.g. export, import)",
-        "value": "Index value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "number_of_products": "Number of products",
+        "concentration_index": "Concentration index",
+        "diversification_index": "Diversification index",
     },
 }
 

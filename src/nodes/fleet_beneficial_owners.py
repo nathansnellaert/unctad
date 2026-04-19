@@ -10,9 +10,13 @@ METADATA = {
     "description": "Merchant fleet data by flag of registration and beneficial ownership from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "flagofregistration": "Flag state of vessel registration",
-        "beneficialownership": "Country of beneficial ownership",
-        "value": "Fleet capacity value",
+        "flagofregistration": "Flag of registration code",
+        "flagofregistration_label": "Flag of registration name",
+        "beneficialownership": "Beneficial ownership code",
+        "beneficialownership_label": "Beneficial ownership name",
+        "dead_weight_tons_in_thousands": "Dead weight tons in thousands",
+        "percentage_of_total_fleet": "Percentage of total fleet",
+        "number_of_ships": "Number of ships",
     },
 }
 

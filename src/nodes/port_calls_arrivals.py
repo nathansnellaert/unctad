@@ -10,9 +10,11 @@ METADATA = {
     "description": "Port call arrival statistics by economy and commercial market segment from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "commercialmarket": "Commercial market segment",
-        "value": "Arrival metric value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "commercialmarket": "Commercial market segment code",
+        "commercialmarket_label": "Commercial market segment name",
+        "number_of_port_calls": "Number of port calls",
     },
 }
 

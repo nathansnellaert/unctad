@@ -10,11 +10,16 @@ METADATA = {
     "description": "Trade in goods associated with plastics by partner economy from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "partner": "Partner economy",
-        "flow": "Trade flow direction (e.g. export, import)",
-        "product": "Product category",
-        "value": "Trade value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "partner": "Partner economy code (UN M49)",
+        "partner_label": "Partner economy name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "product": "Product category code",
+        "product_label": "Product category name",
+        "metric_tons_in_thousands": "Metric tons in thousands",
+        "us_at_current_prices_in_thousands": "US dollars at current prices in thousands",
     },
 }
 
@@ -25,6 +30,8 @@ def download():
 def transform():
     table = load_raw_parquet(UNCTAD_DATASET_ID)
     table = filter_countries(table)
+    if "year" in table.column_names:
+        table = table.drop("year")
     merge(table, SUBSET_DATASET_ID, key=['_year', 'economy', 'partner', 'flow', 'product'])
     publish(SUBSET_DATASET_ID, METADATA)
 

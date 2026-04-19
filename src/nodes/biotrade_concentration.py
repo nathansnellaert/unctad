@@ -10,9 +10,11 @@ METADATA = {
     "description": "Merchandise product concentration indices for biodiversity-based trade from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "flow": "Trade flow direction (e.g. export, import)",
-        "value": "Concentration index value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "product_concentration_index": "Product concentration index",
     },
 }
 
@@ -23,6 +25,8 @@ def download():
 def transform():
     table = load_raw_parquet(UNCTAD_DATASET_ID)
     table = filter_countries(table)
+    if "year" in table.column_names:
+        table = table.drop("year")
     merge(table, SUBSET_DATASET_ID, key=['_year', 'economy', 'flow'])
     publish(SUBSET_DATASET_ID, METADATA)
 

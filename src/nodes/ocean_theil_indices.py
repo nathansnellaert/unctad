@@ -10,10 +10,15 @@ METADATA = {
     "description": "Theil indices measuring ocean-based trade concentration for individual economies from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "product": "Ocean-based product category",
-        "flow": "Trade flow direction (e.g. export, import)",
-        "value": "Index value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "product": "Product category code",
+        "product_label": "Product category name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "overall_theil_index": "Overall theil index",
+        "product_concentration_theil_index": "Product concentration theil index",
+        "market_concentration_theil_index": "Market concentration theil index",
     },
 }
 

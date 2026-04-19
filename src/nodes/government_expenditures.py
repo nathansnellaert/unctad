@@ -10,9 +10,12 @@ METADATA = {
     "description": "Government expenditure by category and economy from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "governmentexpenditure": "Expenditure category",
-        "value": "Expenditure value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "governmentexpenditure": "Government expenditure type code",
+        "governmentexpenditure_label": "Government expenditure type name",
+        "us_dollars_at_current_prices_in_millions": "US dollars at current prices in millions",
+        "percentage_of_gross_domestic_product": "Percentage of gross domestic product",
     },
 }
 

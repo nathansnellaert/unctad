@@ -10,10 +10,16 @@ METADATA = {
     "description": "Gender participation in tradable industries by economy from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "sex": "Gender category",
-        "industry": "Industry sector",
-        "value": "Participation value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "sex": "Sex code",
+        "sex_label": "Sex",
+        "industry": "Industry code",
+        "industry_label": "Industry name",
+        "average_monthly_earnings_of_employees_us": "Average monthly earnings of employees us",
+        "average_monthly_earnings_of_employees_2017_ppp": "Average monthly earnings of employees 2017 PPP",
+        "number_of_employees_in_thousands": "Number of employees in thousands",
+        "percentage_of_employees": "Percentage of employees",
     },
 }
 

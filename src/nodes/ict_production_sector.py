@@ -10,9 +10,11 @@ METADATA = {
     "description": "ICT production sector indicators by economy from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "_variable": "ICT production indicator",
-        "value": "Indicator value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "_variable": "Variable code",
+        "variable_label": "Variable name",
+        "percentage_of_total_business_sector": "Percentage of total business sector",
     },
 }
 

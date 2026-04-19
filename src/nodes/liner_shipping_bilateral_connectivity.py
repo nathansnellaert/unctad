@@ -10,9 +10,12 @@ METADATA = {
     "description": "Bilateral liner shipping connectivity index between economy pairs from UNCTAD.",
     "column_descriptions": {
         "_quarter": "Quarter of observation",
-        "economy": "Reporting economy",
-        "partner": "Partner economy",
-        "value": "Connectivity index value",
+        "quarter_label": "Quarter label",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "partner": "Partner economy code (UN M49)",
+        "partner_label": "Partner economy name",
+        "_index": "Index value",
     },
 }
 

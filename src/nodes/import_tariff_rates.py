@@ -10,11 +10,16 @@ METADATA = {
     "description": "Import tariff rates by duty type, market, origin, and product category from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "dutytype": "Type of tariff duty",
-        "market": "Importing market",
-        "origin": "Origin economy",
-        "productcategory": "Product category",
-        "value": "Tariff rate",
+        "dutytype": "Duty type code",
+        "dutytype_label": "Duty type name",
+        "market": "Market code",
+        "market_label": "Market name",
+        "origin": "Origin code",
+        "origin_label": "Origin name",
+        "productcategory": "Product category code",
+        "productcategory_label": "Product category name",
+        "simple_average_of_rates": "Simple average of rates",
+        "weighted_average_of_rates": "Weighted average of rates",
     },
 }
 

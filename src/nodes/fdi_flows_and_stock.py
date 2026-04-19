@@ -10,10 +10,14 @@ METADATA = {
     "description": "Foreign direct investment flows and stock by economy from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "flow": "FDI measure (flows or stock)",
-        "direction": "Investment direction (inward or outward)",
-        "value": "FDI value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "direction": "Direction code",
+        "direction_label": "Direction",
+        "us_at_current_prices_in_millions": "US dollars at current prices in millions",
+        "percentage_of_total_world": "Percentage of total world",
     },
 }
 

@@ -10,10 +10,16 @@ METADATA = {
     "description": "Trade in digitally deliverable services by economy and category from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "flow": "Trade flow direction (e.g. export, import)",
-        "category": "Service category",
-        "value": "Trade value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "category": "Category code",
+        "category_label": "Category name",
+        "us_at_current_prices_in_millions": "US dollars at current prices in millions",
+        "percentage_of_total_trade_in_services": "Percentage of total trade in services",
+        "percentage_of_total_digitally_deliverable_services": "Percentage of total digitally deliverable services",
+        "percentage_change_yearonyear": "Percentage change year-on-year",
     },
 }
 

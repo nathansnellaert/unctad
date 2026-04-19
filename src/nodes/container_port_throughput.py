@@ -10,8 +10,9 @@ METADATA = {
     "description": "Container port throughput in TEUs by economy from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "value": "Container throughput value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "teu_twenty_foot_equivalent_unit": "TEU twenty foot equivalent unit",
     },
 }
 

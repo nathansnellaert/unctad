@@ -10,9 +10,12 @@ METADATA = {
     "description": "Personal remittance flows by economy from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "flow": "Remittance flow direction (inflows or outflows)",
-        "value": "Remittance value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "us_at_current_prices_in_millions": "US dollars at current prices in millions",
+        "percentage_of_gross_domestic_product": "Percentage of gross domestic product",
     },
 }
 

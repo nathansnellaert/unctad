@@ -10,11 +10,18 @@ METADATA = {
     "description": "Creative goods trade values by economy and partner from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "partner": "Partner economy",
-        "flow": "Trade flow direction (e.g. export, import)",
-        "product": "Creative goods category",
-        "value": "Trade value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "partner": "Partner economy code (UN M49)",
+        "partner_label": "Partner economy name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "product": "Product category code",
+        "product_label": "Product category name",
+        "us_at_current_prices_in_millions": "US dollars at current prices in millions",
+        "percentage_of_total_world": "Percentage of total world",
+        "percentage_by_destination": "Percentage by destination",
+        "percentage_of_total_merchandise_trade": "Percentage of total merchandise trade",
     },
 }
 

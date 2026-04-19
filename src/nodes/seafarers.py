@@ -10,9 +10,12 @@ METADATA = {
     "description": "Seafarer statistics by economy and type from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "seafarertype": "Type of seafarer (officer, rating, etc.)",
-        "value": "Number of seafarers",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "seafarertype": "Seafarer type code",
+        "seafarertype_label": "Seafarer type name",
+        "absolute_value": "Absolute value",
+        "percentage_of_total_world": "Percentage of total world",
     },
 }
 

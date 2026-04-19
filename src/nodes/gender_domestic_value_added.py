@@ -10,11 +10,15 @@ METADATA = {
     "description": "Domestic value added in trade by gender, industry, and component from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "sex": "Gender category",
-        "industry": "Industry sector",
-        "components": "Value added component",
-        "value": "Value added amount",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "sex": "Sex code",
+        "sex_label": "Sex",
+        "industry": "Industry code",
+        "industry_label": "Industry name",
+        "components": "Component code",
+        "components_label": "Component name",
+        "percentage_of_domestic_value_added": "Percentage of domestic value added",
     },
 }
 

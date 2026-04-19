@@ -10,10 +10,13 @@ METADATA = {
     "description": "ICT usage by enterprise size from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "useofict": "Type of ICT use",
-        "enterprisesize": "Enterprise size category",
-        "value": "Usage value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "useofict": "ICT usage type code",
+        "useofict_label": "ICT usage type name",
+        "enterprisesize": "Enterprise size category code",
+        "enterprisesize_label": "Enterprise size category",
+        "percentage": "Percentage",
     },
 }
 

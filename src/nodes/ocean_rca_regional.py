@@ -10,9 +10,11 @@ METADATA = {
     "description": "Revealed comparative advantage in ocean-based trade for regional aggregates from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Regional aggregate",
-        "product": "Ocean-based product category",
-        "value": "RCA index value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "product": "Product category code",
+        "product_label": "Product category name",
+        "revealed_comparative_advantage": "Revealed comparative advantage",
     },
 }
 

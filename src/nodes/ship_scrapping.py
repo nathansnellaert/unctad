@@ -10,8 +10,10 @@ METADATA = {
     "description": "Ship scrapping statistics by economy from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "value": "Ship scrapping metric value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "gross_tonnage": "Gross tonnage",
+        "percentage_of_total_all_economies": "Percentage of total all economies",
     },
 }
 

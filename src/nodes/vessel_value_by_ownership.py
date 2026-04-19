@@ -10,8 +10,9 @@ METADATA = {
     "description": "Commercial vessel fleet value by beneficial ownership from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "beneficialownership": "Country of beneficial ownership",
-        "value": "Fleet value",
+        "beneficialownership": "Beneficial ownership code",
+        "beneficialownership_label": "Beneficial ownership name",
+        "percentage_of_global_fleet_value": "Percentage of global fleet value",
     },
 }
 

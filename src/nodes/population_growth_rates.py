@@ -1,4 +1,4 @@
-from connector_utils import download_dataset, filter_countries
+from connector_utils import download_dataset, filter_countries, format_year_range
 from subsets_utils import save_raw_parquet, load_raw_parquet, merge, publish
 
 UNCTAD_DATASET_ID = "US.PopGR"
@@ -9,9 +9,11 @@ METADATA = {
     "title": "UNCTAD Population Growth Rates",
     "description": "Population growth rates by economy from UNCTAD.",
     "column_descriptions": {
-        "period": "Period of observation",
-        "economy": "Reporting economy",
-        "value": "Population growth rate",
+        "period": "Year range (e.g. 1950-1951)",
+        "period_label": "Period label",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "annual_average_growth_rate": "Annual average population growth rate",
     },
 }
 
@@ -22,6 +24,7 @@ def download():
 def transform():
     table = load_raw_parquet(UNCTAD_DATASET_ID)
     table = filter_countries(table)
+    table = format_year_range(table, "period")
     merge(table, SUBSET_DATASET_ID, key=['period', 'economy'])
     publish(SUBSET_DATASET_ID, METADATA)
 

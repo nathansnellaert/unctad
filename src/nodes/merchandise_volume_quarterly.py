@@ -10,9 +10,16 @@ METADATA = {
     "description": "Quarterly merchandise trade volume indices by economy from UNCTAD.",
     "column_descriptions": {
         "_quarter": "Quarter of observation",
-        "economy": "Reporting economy",
-        "flow": "Trade flow direction (e.g. export, import)",
-        "value": "Volume index value",
+        "quarter_label": "Quarter label",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "growth_rate_over_previous_period": "Growth rate over previoUS period",
+        "growth_rate_yearonyear": "Growth rate year-on-year",
+        "volume_index_2005100": "Volume index (base 2005=100)",
+        "volume_index_seasonally_adjusted_2005100": "Volume index seasonally adjusted (base 2005=100)",
+        "growth_rate_over_previous_period_seasonally_adjusted": "Growth rate over previoUS period seasonally adjusted",
     },
 }
 

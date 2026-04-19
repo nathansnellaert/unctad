@@ -10,8 +10,10 @@ METADATA = {
     "description": "Annual commodity price indices from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "commodity": "Commodity group or item",
-        "value": "Price index value",
+        "commodity": "Commodity code",
+        "commodity_label": "Commodity name",
+        "index_base_2015": "Index base 2015",
+        "growth_rate_over_previous_period": "Growth rate over previoUS period",
     },
 }
 

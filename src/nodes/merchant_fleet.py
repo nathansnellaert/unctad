@@ -10,9 +10,16 @@ METADATA = {
     "description": "Merchant fleet capacity by economy and ship type from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Flag state economy",
-        "shiptype": "Type of vessel",
-        "value": "Fleet capacity value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "shiptype": "Ship type code",
+        "shiptype_label": "Ship type name",
+        "dead_weight_tons_in_thousands": "Dead weight tons in thousands",
+        "percentage_of_total_world": "Percentage of total world",
+        "percentage_of_total_fleet": "Percentage of total fleet",
+        "number_of_ships": "Number of ships",
+        "gross_tonnage_in_thousands": "Gross tonnage in thousands",
+        "average_age_of_vessels_years": "Average age of vessels years",
     },
 }
 

@@ -10,8 +10,9 @@ METADATA = {
     "description": "Commercial vessel fleet value by flag of registration from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "flagofregistration": "Flag state of vessel registration",
-        "value": "Fleet value",
+        "flagofregistration": "Flag of registration code",
+        "flagofregistration_label": "Flag of registration name",
+        "percentage_of_global_fleet_value": "Percentage of global fleet value",
     },
 }
 

@@ -10,8 +10,9 @@ METADATA = {
     "description": "Annual commodity prices from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "commodity": "Commodity group or item",
-        "value": "Commodity price",
+        "commodity": "Commodity code",
+        "commodity_label": "Commodity name",
+        "prices": "Price value",
     },
 }
 

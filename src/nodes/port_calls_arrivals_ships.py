@@ -10,9 +10,12 @@ METADATA = {
     "description": "Port call arrival statistics for ships by economy and commercial market from UNCTAD.",
     "column_descriptions": {
         "period": "Period of observation",
-        "economy": "Reporting economy",
-        "commercialmarket": "Commercial market segment",
-        "value": "Ship arrival metric value",
+        "period_label": "Period label",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "commercialmarket": "Commercial market segment code",
+        "commercialmarket_label": "Commercial market segment name",
+        "number_of_port_calls": "Number of port calls",
     },
 }
 

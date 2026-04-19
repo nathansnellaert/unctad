@@ -9,9 +9,11 @@ METADATA = {
     "title": "UNCTAD Commodity Prices (Monthly)",
     "description": "Monthly commodity prices from UNCTAD.",
     "column_descriptions": {
-        "period": "Month of observation",
-        "commodity": "Commodity group or item",
-        "value": "Commodity price",
+        "period": "Period of observation",
+        "period_label": "Period label",
+        "commodity": "Commodity code",
+        "commodity_label": "Commodity name",
+        "prices": "Price value",
     },
 }
 

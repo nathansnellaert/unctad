@@ -10,8 +10,10 @@ METADATA = {
     "description": "Annual consumer price index by economy from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "value": "CPI value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "index_base_2010": "Index base 2010",
+        "annual_average_growth_rate": "Annual average growth rate",
     },
 }
 

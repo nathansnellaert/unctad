@@ -10,9 +10,11 @@ METADATA = {
     "description": "Exchange rate cross-tabulation between economies from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Domestic economy",
-        "foreigneconomy": "Foreign economy",
-        "value": "Exchange rate",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "foreigneconomy": "Foreign economy code (UN M49)",
+        "foreigneconomy_label": "Foreign economy name",
+        "exchange_rate_national_currency_at_current_prices": "Exchange rate national currency at current prices",
     },
 }
 

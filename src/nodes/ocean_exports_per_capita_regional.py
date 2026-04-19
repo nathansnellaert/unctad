@@ -10,8 +10,9 @@ METADATA = {
     "description": "Ocean-based exports per capita for regional aggregates from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Regional aggregate",
-        "value": "Exports per capita value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "us_at_current_prices_per_capita": "US dollars at current prices per capita",
     },
 }
 

@@ -10,9 +10,11 @@ METADATA = {
     "description": "Terms of trade indices for merchandise by economy from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "_index": "Index type",
-        "value": "Terms of trade index value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "_index": "Index value",
+        "index_label": "Index label",
+        "index_base_2015": "Index base 2015",
     },
 }
 

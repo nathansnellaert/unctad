@@ -10,9 +10,19 @@ METADATA = {
     "description": "Port call statistics for ships by economy and commercial market from UNCTAD.",
     "column_descriptions": {
         "period": "Period of observation",
-        "economy": "Reporting economy",
-        "commercialmarket": "Commercial market segment",
-        "value": "Ship port call metric value",
+        "period_label": "Period label",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "commercialmarket": "Commercial market segment code",
+        "commercialmarket_label": "Commercial market segment name",
+        "median_time_in_port_days": "Median time in port days",
+        "average_age_of_vessels_years": "Average age of vessels years",
+        "average_size_gt_of_vessels": "Average size GT of vessels",
+        "average_cargo_carrying_capacity_dwt_per_vessel": "Average cargo carrying capacity DWT per vessel",
+        "average_container_carrying_capacity_teu_per_container_ship": "Average container carrying capacity TEU per container ship",
+        "maximum_size_gt_of_vessels": "Maximum size GT of vessels",
+        "maximum_cargo_carrying_capacity_dwt_of_vessels": "Maximum cargo carrying capacity DWT of vessels",
+        "maximum_container_carrying_capacity_teu_of_container_ships": "Maximum container carrying capacity TEU of container ships",
     },
 }
 

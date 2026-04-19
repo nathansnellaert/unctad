@@ -10,11 +10,16 @@ METADATA = {
     "description": "Ocean-based trade for regional aggregates by partner and product from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Regional aggregate",
-        "partner": "Partner economy or aggregate",
-        "product": "Ocean-based product category",
-        "flow": "Trade flow direction (e.g. export, import)",
-        "value": "Trade value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "partner": "Partner economy code (UN M49)",
+        "partner_label": "Partner economy name",
+        "product": "Product category code",
+        "product_label": "Product category name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "us_at_current_prices_in_thousands": "US dollars at current prices in thousands",
+        "growth_rate_yearonyear": "Growth rate year-on-year",
     },
 }
 

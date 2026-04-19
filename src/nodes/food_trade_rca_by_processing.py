@@ -10,9 +10,11 @@ METADATA = {
     "description": "Revealed comparative advantage in food trade by processing level from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "processfoodcategory": "Food processing category",
-        "value": "RCA index value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "processfoodcategory": "Food processing category code",
+        "processfoodcategory_label": "Food processing category name",
+        "rca_food_process": "RCA food process",
     },
 }
 

@@ -45,14 +45,30 @@ def download_dataset(report_name: str):
         """).arrow()
         conn.close()
 
-    # Drop columns with null type (all values are null)
     cols_to_keep = []
     for i, field in enumerate(table.schema):
-        if field.type != pa.null():
-            cols_to_keep.append(table.column_names[i])
+        name = table.column_names[i]
+        if field.type == pa.null():
+            continue
+        if name.endswith("_footnote") or name.endswith("_missing_value"):
+            continue
+        cols_to_keep.append(name)
     if len(cols_to_keep) < len(table.column_names):
         table = table.select(cols_to_keep)
 
+    return table
+
+
+def format_year_range(table, column):
+    """Convert 8-digit int year ranges (e.g. 19801981) to 'YYYY-YYYY' strings."""
+    col = table[column]
+    if pa.types.is_integer(col.type):
+        s = pc.cast(col, pa.utf8())
+        start = pc.utf8_slice_codeunits(s, 0, 4)
+        end = pc.utf8_slice_codeunits(s, 4)
+        formatted = pc.binary_join_element_wise(start, end, "-")
+        idx = table.column_names.index(column)
+        table = table.set_column(idx, column, formatted)
     return table
 
 

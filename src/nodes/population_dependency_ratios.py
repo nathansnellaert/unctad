@@ -9,10 +9,12 @@ METADATA = {
     "title": "UNCTAD Population Dependency Ratios",
     "description": "Population dependency ratios by economy from UNCTAD.",
     "column_descriptions": {
-        "series": "Dependency ratio series",
+        "series": "Series code",
+        "series_label": "Series name",
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "value": "Dependency ratio",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "persons_per_hundred_persons_aged_1564": "Persons per hundred persons aged 1564",
     },
 }
 

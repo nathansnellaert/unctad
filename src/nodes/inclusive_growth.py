@@ -10,9 +10,11 @@ METADATA = {
     "description": "Inclusive growth indicators by economy and category from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "category": "Indicator category",
-        "value": "Indicator value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "category": "Category code",
+        "category_label": "Category name",
+        "inclusive_growth": "Inclusive growth",
     },
 }
 

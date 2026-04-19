@@ -10,8 +10,13 @@ METADATA = {
     "description": "Annual liner shipping connectivity index by economy from UNCTAD.",
     "column_descriptions": {
         "_quarter": "Quarter of observation",
-        "economy": "Reporting economy",
-        "value": "Connectivity index value",
+        "quarter_label": "Quarter label",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "index_average_q1_2023_100": "Index average q1 2023 100",
+        "growth_rate_yearonyear": "Growth rate year-on-year",
+        "growth_rate_over_previous_period": "Growth rate over previoUS period",
+        "ranking_per_quarter": "Ranking per quarter",
     },
 }
 

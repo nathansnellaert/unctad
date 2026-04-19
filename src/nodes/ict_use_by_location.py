@@ -10,10 +10,13 @@ METADATA = {
     "description": "ICT usage by location type from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "useofict": "Type of ICT use",
-        "locationtype": "Location type (urban, rural, etc.)",
-        "value": "Usage value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "useofict": "ICT usage type code",
+        "useofict_label": "ICT usage type name",
+        "locationtype": "Location type code",
+        "locationtype_label": "Location type name",
+        "percentage": "Percentage",
     },
 }
 

@@ -10,9 +10,11 @@ METADATA = {
     "description": "Productive capacities index by economy and category from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "category": "Productive capacity category",
-        "value": "Index value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "category": "Category code",
+        "category_label": "Category name",
+        "productive_capacities_index": "Productive capacities index",
     },
 }
 

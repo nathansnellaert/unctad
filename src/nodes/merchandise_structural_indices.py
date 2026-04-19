@@ -10,9 +10,12 @@ METADATA = {
     "description": "Structural indices for merchandise trade by product from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "flow": "Trade flow direction (e.g. export, import)",
-        "product": "Product category",
-        "value": "Index value",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "product": "Product category code",
+        "product_label": "Product category name",
+        "concentration_index": "Concentration index",
+        "structural_change_index_19950": "Structural change index (base 1995=100)",
     },
 }
 

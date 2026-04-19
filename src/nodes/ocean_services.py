@@ -10,10 +10,15 @@ METADATA = {
     "description": "Ocean-based services trade by economy and category from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "flow": "Trade flow direction (e.g. export, import)",
-        "category": "Service category",
-        "value": "Trade value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "category": "Category code",
+        "category_label": "Category name",
+        "us_at_current_prices_in_millions": "US dollars at current prices in millions",
+        "growth_rate_over_previous_period": "Growth rate over previoUS period",
+        "us_at_current_prices_per_capita": "US dollars at current prices per capita",
     },
 }
 

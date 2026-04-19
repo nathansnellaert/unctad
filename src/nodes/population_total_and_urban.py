@@ -10,8 +10,10 @@ METADATA = {
     "description": "Total and urban population by economy from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "value": "Population value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "absolute_value_in_thousands": "Absolute value in thousands",
+        "urban_population_as_percentage_of_total_population": "Urban population as percentage of total population",
     },
 }
 

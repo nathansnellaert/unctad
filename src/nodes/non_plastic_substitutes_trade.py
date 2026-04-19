@@ -10,11 +10,16 @@ METADATA = {
     "description": "Trade in non-plastic substitute products by partner economy from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "partner": "Partner economy",
-        "flow": "Trade flow direction (e.g. export, import)",
-        "product": "Product category",
-        "value": "Trade value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "partner": "Partner economy code (UN M49)",
+        "partner_label": "Partner economy name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "product": "Product category code",
+        "product_label": "Product category name",
+        "us_at_current_prices_in_thousands": "US dollars at current prices in thousands",
+        "metric_tons_in_thousands": "Metric tons in thousands",
     },
 }
 

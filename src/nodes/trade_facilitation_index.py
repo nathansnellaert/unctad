@@ -10,9 +10,11 @@ METADATA = {
     "description": "Trade facilitation reform index by economy and category from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "category": "Facilitation category",
-        "value": "Index value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "category": "Category code",
+        "category_label": "Category name",
+        "_index": "Index value",
     },
 }
 

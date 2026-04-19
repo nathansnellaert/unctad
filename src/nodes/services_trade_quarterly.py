@@ -10,10 +10,17 @@ METADATA = {
     "description": "Quarterly total and commercial services trade by economy from UNCTAD.",
     "column_descriptions": {
         "period": "Period of observation",
-        "economy": "Reporting economy",
-        "flow": "Trade flow direction (e.g. export, import)",
-        "category": "Service category",
-        "value": "Trade value",
+        "period_label": "Period label",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "flow": "Trade flow direction code",
+        "flow_label": "Trade flow direction",
+        "category": "Category code",
+        "category_label": "Category name",
+        "us_at_current_prices_in_millions": "US dollars at current prices in millions",
+        "growth_rate_yearonyear": "Growth rate year-on-year",
+        "us_at_current_prices_seasonally_adjusted_in_millions": "US dollars at current prices seasonally adjusted in millions",
+        "growth_rate_over_previous_period_seasonally_adjusted": "Growth rate over previoUS period seasonally adjusted",
     },
 }
 

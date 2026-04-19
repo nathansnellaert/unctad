@@ -10,8 +10,10 @@ METADATA = {
     "description": "Gross national income total and per capita by economy from UNCTAD.",
     "column_descriptions": {
         "_year": "Year of observation",
-        "economy": "Reporting economy",
-        "value": "GNI value",
+        "economy": "Reporting economy code (UN M49)",
+        "economy_label": "Reporting economy name",
+        "us_dollars_at_current_prices_in_millions": "US dollars at current prices in millions",
+        "us_dollars_at_current_prices_per_capita": "US dollars at current prices per capita",
     },
 }
 
