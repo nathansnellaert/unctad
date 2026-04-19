@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_personal_remittances"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Personal Remittances",
     "description": "Personal remittance flows by economy from UNCTAD.",
     "column_descriptions": {

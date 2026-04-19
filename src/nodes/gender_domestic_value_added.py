@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_gender_domestic_value_added"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Gender and Domestic Value Added",
     "description": "Domestic value added in trade by gender, industry, and component from UNCTAD.",
     "column_descriptions": {

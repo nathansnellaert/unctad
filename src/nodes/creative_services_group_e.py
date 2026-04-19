@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_creative_services_group_e"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Creative Services (Group E)",
     "description": "Creative services trade data grouped by EBOPS category from UNCTAD.",
     "column_descriptions": {

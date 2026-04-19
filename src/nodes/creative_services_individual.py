@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_creative_services_individual"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Creative Services (Individual)",
     "description": "Individual creative services trade totals by economy from UNCTAD.",
     "column_descriptions": {

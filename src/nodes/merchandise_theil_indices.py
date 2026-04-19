@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_merchandise_theil_indices"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Merchandise Theil Indices",
     "description": "Theil indices measuring merchandise trade concentration from UNCTAD.",
     "column_descriptions": {

@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_creative_goods_index"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Creative Goods Index",
     "description": "Creative goods trade indices from UNCTAD.",
     "column_descriptions": {

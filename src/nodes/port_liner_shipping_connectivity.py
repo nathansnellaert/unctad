@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_port_liner_shipping_connectivity"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Port Liner Shipping Connectivity",
     "description": "Port-level liner shipping connectivity index from UNCTAD.",
     "column_descriptions": {

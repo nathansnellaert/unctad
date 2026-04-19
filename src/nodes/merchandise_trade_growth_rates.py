@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_merchandise_trade_growth_rates"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Merchandise Trade Growth Rates",
     "description": "Growth rates of merchandise trade by economy from UNCTAD.",
     "column_descriptions": {

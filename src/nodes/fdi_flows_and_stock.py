@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_fdi_flows_and_stock"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD FDI Flows and Stock",
     "description": "Foreign direct investment flows and stock by economy from UNCTAD.",
     "column_descriptions": {

@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_food_trade_processing_by_category"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Food Trade Processing by Category",
     "description": "Processed food trade by food category from UNCTAD.",
     "column_descriptions": {

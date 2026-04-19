@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_gdp_growth_rates"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD GDP Growth Rates",
     "description": "GDP growth rates by economy from UNCTAD.",
     "column_descriptions": {

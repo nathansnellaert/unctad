@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_population_dependency_ratios"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Population Dependency Ratios",
     "description": "Population dependency ratios by economy from UNCTAD.",
     "column_descriptions": {

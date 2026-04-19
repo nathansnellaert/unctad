@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_transport_costs"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Transport Costs",
     "description": "International transport costs by economy, partner, and product from UNCTAD.",
     "column_descriptions": {

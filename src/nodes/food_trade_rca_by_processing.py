@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_food_trade_rca_by_processing"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Food Trade RCA by Processing Level",
     "description": "Revealed comparative advantage in food trade by processing level from UNCTAD.",
     "column_descriptions": {

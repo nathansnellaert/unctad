@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_import_tariff_rates"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Import Tariff Rates",
     "description": "Import tariff rates by duty type, market, origin, and product category from UNCTAD.",
     "column_descriptions": {

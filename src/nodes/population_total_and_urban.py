@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_population_total_and_urban"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Population Total and Urban",
     "description": "Total and urban population by economy from UNCTAD.",
     "column_descriptions": {

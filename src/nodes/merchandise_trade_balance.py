@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_merchandise_trade_balance"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Merchandise Trade Balance",
     "description": "Merchandise trade balance by economy from UNCTAD.",
     "column_descriptions": {

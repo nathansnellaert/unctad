@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_seaborne_trade"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Seaborne Trade",
     "description": "Seaborne trade volumes by economy and cargo type from UNCTAD.",
     "column_descriptions": {

@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_gni_total_and_per_capita"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD GNI Total and Per Capita",
     "description": "Gross national income total and per capita by economy from UNCTAD.",
     "column_descriptions": {

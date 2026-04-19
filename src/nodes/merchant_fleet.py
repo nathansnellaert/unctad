@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_merchant_fleet"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Merchant Fleet",
     "description": "Merchant fleet capacity by economy and ship type from UNCTAD.",
     "column_descriptions": {

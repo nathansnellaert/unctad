@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_inclusive_growth"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Inclusive Growth",
     "description": "Inclusive growth indicators by economy and category from UNCTAD.",
     "column_descriptions": {

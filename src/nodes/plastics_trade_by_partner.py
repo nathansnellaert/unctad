@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_plastics_trade_by_partner"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Plastics Trade by Partner",
     "description": "Plastics trade by economy, partner, and product category from UNCTAD.",
     "column_descriptions": {

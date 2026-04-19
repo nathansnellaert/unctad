@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_ocean_exports_per_capita_regional"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Ocean Exports Per Capita (Regional)",
     "description": "Ocean-based exports per capita for regional aggregates from UNCTAD.",
     "column_descriptions": {

@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_consumer_price_index_annual"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Consumer Price Index (Annual)",
     "description": "Annual consumer price index by economy from UNCTAD.",
     "column_descriptions": {

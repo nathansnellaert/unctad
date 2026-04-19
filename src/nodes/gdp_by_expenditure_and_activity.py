@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_gdp_by_expenditure_and_activity"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD GDP by Expenditure and Activity",
     "description": "GDP broken down by expenditure component and economic activity from UNCTAD.",
     "column_descriptions": {

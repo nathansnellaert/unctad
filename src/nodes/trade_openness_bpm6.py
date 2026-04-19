@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_trade_openness_bpm6"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Trade Openness (BPM6)",
     "description": "Trade openness indicators for goods and services using BPM6 methodology from UNCTAD.",
     "column_descriptions": {

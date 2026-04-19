@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_trade_facilitation_index"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Trade Facilitation Index",
     "description": "Trade facilitation reform index by economy and category from UNCTAD.",
     "column_descriptions": {

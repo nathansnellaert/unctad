@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_port_calls_ships"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Port Calls (Ships)",
     "description": "Port call statistics for ships by economy and commercial market from UNCTAD.",
     "column_descriptions": {

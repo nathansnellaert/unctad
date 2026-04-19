@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_ocean_services"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Ocean Services",
     "description": "Ocean-based services trade by economy and category from UNCTAD.",
     "column_descriptions": {

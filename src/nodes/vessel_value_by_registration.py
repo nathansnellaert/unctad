@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_vessel_value_by_registration"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Vessel Value by Registration",
     "description": "Commercial vessel fleet value by flag of registration from UNCTAD.",
     "column_descriptions": {

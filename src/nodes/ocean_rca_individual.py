@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_ocean_rca_individual"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Ocean RCA (Individual Economies)",
     "description": "Revealed comparative advantage in ocean-based trade for individual economies from UNCTAD.",
     "column_descriptions": {

@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_population_structure_by_age_gender"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Population Structure by Age and Gender",
     "description": "Population structure broken down by age class and gender from UNCTAD.",
     "column_descriptions": {

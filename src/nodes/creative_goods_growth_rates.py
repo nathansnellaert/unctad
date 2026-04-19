@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_creative_goods_growth_rates"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Creative Goods Growth Rates",
     "description": "Growth rates of creative goods trade by economy and partner from UNCTAD.",
     "column_descriptions": {

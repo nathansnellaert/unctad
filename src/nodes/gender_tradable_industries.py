@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_gender_tradable_industries"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Gender in Tradable Industries",
     "description": "Gender participation in tradable industries by economy from UNCTAD.",
     "column_descriptions": {

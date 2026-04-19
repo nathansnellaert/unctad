@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_ict_production_sector"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD ICT Production Sector",
     "description": "ICT production sector indicators by economy from UNCTAD.",
     "column_descriptions": {

@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_ict_use_by_enterprise_size"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD ICT Use by Enterprise Size",
     "description": "ICT usage by enterprise size from UNCTAD.",
     "column_descriptions": {

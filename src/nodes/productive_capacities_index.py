@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_productive_capacities_index"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Productive Capacities Index",
     "description": "Productive capacities index by economy and category from UNCTAD.",
     "column_descriptions": {

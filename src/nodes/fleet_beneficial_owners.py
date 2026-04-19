@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_fleet_beneficial_owners"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Fleet Beneficial Owners",
     "description": "Merchant fleet data by flag of registration and beneficial ownership from UNCTAD.",
     "column_descriptions": {

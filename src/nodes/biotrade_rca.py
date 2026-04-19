@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_biotrade_rca"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD BioTrade Revealed Comparative Advantage",
     "description": "Revealed comparative advantage indices for biodiversity-based merchandise trade from UNCTAD.",
     "column_descriptions": {

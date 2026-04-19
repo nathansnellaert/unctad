@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_exchange_rates"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Exchange Rates",
     "description": "Exchange rate cross-tabulation between economies from UNCTAD.",
     "column_descriptions": {

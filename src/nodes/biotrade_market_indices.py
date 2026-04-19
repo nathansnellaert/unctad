@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_biotrade_market_indices"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD BioTrade Market Indices",
     "description": "Market indices for biodiversity-based merchandise trade from UNCTAD.",
     "column_descriptions": {

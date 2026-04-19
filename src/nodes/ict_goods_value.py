@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_ict_goods_value"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD ICT Goods Value",
     "description": "ICT goods trade values by economy and category from UNCTAD.",
     "column_descriptions": {

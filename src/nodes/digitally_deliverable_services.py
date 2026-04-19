@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_digitally_deliverable_services"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Digitally Deliverable Services",
     "description": "Trade in digitally deliverable services by economy and category from UNCTAD.",
     "column_descriptions": {

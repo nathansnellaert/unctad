@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_gdp_total_and_per_capita"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD GDP Total and Per Capita",
     "description": "Total GDP and GDP per capita by economy from UNCTAD.",
     "column_descriptions": {

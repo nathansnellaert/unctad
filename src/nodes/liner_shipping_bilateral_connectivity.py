@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_liner_shipping_bilateral_connectivity"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Liner Shipping Bilateral Connectivity",
     "description": "Bilateral liner shipping connectivity index between economy pairs from UNCTAD.",
     "column_descriptions": {

@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_ocean_theil_indices"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Ocean Theil Indices",
     "description": "Theil indices measuring ocean-based trade concentration for individual economies from UNCTAD.",
     "column_descriptions": {

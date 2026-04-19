@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_merchandise_concentration_indices"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Merchandise Concentration Indices",
     "description": "Concentration and diversification indices for merchandise trade from UNCTAD.",
     "column_descriptions": {

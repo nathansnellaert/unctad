@@ -80,4 +80,12 @@ def filter_countries(table, column="economy"):
     """
     if column not in table.column_names:
         return table
-    return table.filter(pc.equal(pc.utf8_length(table[column]), 3))
+    col = table[column]
+    if pa.types.is_integer(col.type):
+        col = pc.cast(col, pa.utf8())
+        idx = table.column_names.index(column)
+        table = table.set_column(idx, column, col)
+    table = table.filter(pc.less_equal(pc.utf8_length(table[column]), 3))
+    col = pc.utf8_lpad(table[column], 3, "0")
+    idx = table.column_names.index(column)
+    return table.set_column(idx, column, col)

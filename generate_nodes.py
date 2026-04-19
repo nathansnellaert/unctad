@@ -16,6 +16,7 @@ SUBSET_DATASET_ID = "{subset_id}"
 
 METADATA = {{
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD {title}",
     "description": "{description}",
     "column_descriptions": {{
@@ -52,6 +53,7 @@ SUBSET_DATASET_ID = "{subset_id}"
 
 METADATA = {{
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD {title}",
     "description": "{description}",
     "column_descriptions": {{

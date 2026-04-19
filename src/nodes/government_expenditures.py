@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_government_expenditures"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Government Expenditures",
     "description": "Government expenditure by category and economy from UNCTAD.",
     "column_descriptions": {

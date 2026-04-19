@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_current_account_balance"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Current Account Balance",
     "description": "Current account balance by economy from UNCTAD.",
     "column_descriptions": {

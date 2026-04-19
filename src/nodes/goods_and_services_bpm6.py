@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_goods_and_services_bpm6"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Goods and Services Trade (BPM6)",
     "description": "Goods and services trade using BPM6 methodology from UNCTAD.",
     "column_descriptions": {

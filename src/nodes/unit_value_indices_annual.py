@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_unit_value_indices_annual"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Unit Value Indices (Annual)",
     "description": "Annual unit value and price indices for commodities from UNCTAD.",
     "column_descriptions": {

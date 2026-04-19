@@ -6,6 +6,7 @@ SUBSET_DATASET_ID = "unctad_merchandise_structural_indices"
 
 METADATA = {
     "id": SUBSET_DATASET_ID,
+    "license": "UNCTAD Terms of Use",
     "title": "UNCTAD Merchandise Structural Indices",
     "description": "Structural indices for merchandise trade by product from UNCTAD.",
     "column_descriptions": {
